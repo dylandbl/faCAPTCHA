@@ -1,5 +1,5 @@
 # faCAPTCHA
-A functional, configurable CAPTCHA with features available to create an anti-UX design. faCAPTCHA is a joke component inspired by YouTuber and streamer [Kitboga](https://www.youtube.com/c/KitbogaShow), a scambaiter who uses fake websites to frustrate and waste the time of scammers. The component is fully-functional and can operate as a proper CAPTCHA with proper configuration. Just be sure to change the `helpText`.
+A functional, configurable CAPTCHA with features available to create an anti-UX design. faCAPTCHA is a joke component inspired by YouTuber and streamer [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites to frustrate and waste the time of scammers. The component is fully-functional and can operate as a complete CAPTCHA with proper configuration. Just be sure to change the `helpText`.
 
 # Getting Started with Create React App
 
