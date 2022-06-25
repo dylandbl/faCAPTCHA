@@ -5,15 +5,15 @@ A functional, configurable CAPTCHA with features available to create an anti-UX 
 ## API
 | Property           | Type       | Default value |Description |
 | ------------------ | ---------- | ------------- |----------- |
-| `captchaTopics`    | `string[]`       | See here      | The topics displayed at the top of the CAPTCHA. If not defined, a pseudorandomly selected default value will be used. | 
+| `captchaTopics`    | `string[]`       | See here      | Topics displayed at the top of the CAPTCHA. If not defined, a pseudorandomly selected default value will be used. | 
 | `captchaTopicText` | `string[]`       | See here      | Array of topics to be displayed in the CAPTCHA header. Does not work with `headerText`. |
 | `cellsWide`        | `number`         | `4`           | Number of cells in each row. |
 | `cellsTall`        | `number`         | `cellsWide`   | Number of cells in each column. |
 | `imgTopicUrls`     | `ImgTopicType[]` | -             | Array of image URLs with associated tags. Tags are compared to the topic selected from `captchaTopics`. The images will be displayed in order. |
 | `headerText`       | `string`         | See here      | Used in place of the CAPTCHA header text. Overrides `captchaTopic`.
-| `helpText`         | `string`         | See here      | Alternative to the default help text, shown when the '?' icon is clicked. |
-| `minAttempts`      | `number`         | `1`           | The minimum number of required attempts, regardless of whether the attempts are correct or not. |
-| `notARobotText`    | `string`         | `"I'm not a robot"` | - |
+| `helpText`         | `string`         | See here      | Used in place of the default help text, shown when the '?' icon is clicked. |
+| `minAttempts`      | `number`         | `1`           | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
+| `notARobotText`    | `string`         | `"I'm not a robot"` | Used in place of the "I'm not a robot" text. |
 | `onClickCheckbox`  | `() => void`     | -             | Executes on clicking the checkbox, does not execute if the CAPTCHA popup is open. |
 | `onClickVerify`    | `() => void`     | -             | Executes on clicking the 'Verify' button. |
 | `onRefresh`        | `() => void`     | -             | Executes on clicking the refresh icon. |
