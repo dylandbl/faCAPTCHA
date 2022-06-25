@@ -11,6 +11,7 @@ export namespace FakeCaptchaProps {
     cellsWide?: number; // Number of cells in each row.
     headerText?: string; // Used in place of the CAPTCHA header text. Overrides captchaTopic.
     imgTopicUrls: ImgTopicType[]; // Array of image URLs with associated tags. The tags are compared to captchaTopics and case and spelling must match exactly. The images will be displayed in order.
+    helpText?: string; // An alternative to the default help text, shown when the '?' icon is clicked.
     minAttempts?: number; // The minimum number of required attempts, regardless of whether the attempts are correct or not.
     onClickVerify?: () => void; // Function to execute on clicking 'Verify'.
     onRefresh?: () => void; // Executes on clicking the refresh icon.

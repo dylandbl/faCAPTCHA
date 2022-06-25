@@ -19,6 +19,7 @@ export const FakeCaptchaButton = (props: FakeCaptchaProps.CaptchaButton) => {
     cellsTall,
     imgTopicUrls,
     onClickCheckbox,
+    helpText,
   } = props;
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
@@ -66,6 +67,7 @@ export const FakeCaptchaButton = (props: FakeCaptchaProps.CaptchaButton) => {
           cellsWide={cellsWide}
           cellsTall={cellsTall}
           imgTopicUrls={imgTopicUrls}
+          helpText={helpText}
         />
       )}
     </>

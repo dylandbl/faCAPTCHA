@@ -30,6 +30,7 @@ const FakeCAPTCHA = (props: FakeCaptchaProps.CaptchaWindow) => {
     minAttempts = 1,
     captchaTopicText,
     imgTopicUrls,
+    helpText,
   } = props;
   const initialTopic = captchaTopicText
     ? captchaTopicText[
@@ -199,7 +200,8 @@ const FakeCAPTCHA = (props: FakeCaptchaProps.CaptchaWindow) => {
         {displayInfo && (
           <InfoDisplay>
             <p>
-              {`Click on the images that correspond with the given prompt. Once you've selected all applicable images, click '${verifyText}'. 
+              {helpText ??
+                `Click on the images that correspond with the given prompt. Once you've selected all applicable images, click '${verifyText}'. 
               If you make multiple wrong attempts in a row, you will be barred from accessing the site. The number of wrong attempts permitted 
               depends on your browsing behaviour. If you complete an entire row, column, or diagonal, you have a bingo. Shout 'bingo' into your 
               microphone to access the site.`}
