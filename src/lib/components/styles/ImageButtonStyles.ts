@@ -20,6 +20,7 @@ export const ClickableImage = styled.button<{
   background-size: cover;
   background-color: #f7f7f7;
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
 
   cursor: pointer;
