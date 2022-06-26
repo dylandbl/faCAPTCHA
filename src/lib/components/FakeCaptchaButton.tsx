@@ -20,6 +20,7 @@ export const FakeCaptchaButton = (props: FakeCaptchaProps.CaptchaButton) => {
     imgTopicUrls,
     onClickCheckbox,
     helpText,
+    simulateSlow = 1,
   } = props;
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
@@ -34,10 +35,11 @@ export const FakeCaptchaButton = (props: FakeCaptchaProps.CaptchaButton) => {
 
   // Delays displaying the checkmark.
   useEffect(() => {
-    captchaPassed && setTimeout(() => setChecked(true), 800);
+    captchaPassed && setTimeout(() => setChecked(true), simulateSlow * 266);
     // Slight delay to ensure checkmark appears first.
-    captchaPassed && setTimeout(() => onVerificationComplete(), 900);
-  }, [captchaPassed, onVerificationComplete]);
+    captchaPassed &&
+      setTimeout(() => onVerificationComplete(), simulateSlow * 266 + 100);
+  }, [captchaPassed, onVerificationComplete, simulateSlow]);
 
   return (
     <>
@@ -68,6 +70,7 @@ export const FakeCaptchaButton = (props: FakeCaptchaProps.CaptchaButton) => {
           cellsTall={cellsTall}
           imgTopicUrls={imgTopicUrls}
           helpText={helpText}
+          simulateSlow={simulateSlow}
         />
       )}
     </>
