@@ -7,7 +7,6 @@ function App() {
 
   useEffect(() => {
     if (verified) {
-      console.log(verified);
       window.alert("verified, baby!");
     }
   }, [verified]);
@@ -18,6 +17,7 @@ function App() {
         onVerificationComplete={() => setVerified(true)}
         imgTopicUrls={imagesArr1}
         minAttempts={3}
+        cellsWide={6}
       />
     </div>
   );
