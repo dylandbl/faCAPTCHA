@@ -1,12 +1,14 @@
+import { FakeCaptchaProps } from "../types/fakeCaptcha";
 import { CaptchaHeaderDiv } from "./styles/fakeCaptchaStyles";
 
 interface CaptchaHeaderProps {
-  headerText?: string;
+  headerText?: FakeCaptchaProps.SharedProps["headerText"];
   captchaTopic: string;
+  verifyText: FakeCaptchaProps.SharedProps["verifyText"];
 }
 
 export const CaptchaHeader = (props: CaptchaHeaderProps) => {
-  const { headerText, captchaTopic } = props;
+  const { headerText, captchaTopic, verifyText } = props;
 
   return (
     <CaptchaHeaderDiv>
@@ -16,7 +18,7 @@ export const CaptchaHeader = (props: CaptchaHeaderProps) => {
         <>
           <p>Select all squares with</p>
           <h4>{captchaTopic}</h4>
-          <p>If there are none, click verify</p>
+          <p>If there are none, click {verifyText}</p>
         </>
       )}
     </CaptchaHeaderDiv>
