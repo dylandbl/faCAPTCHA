@@ -17,7 +17,7 @@ A functional, configurable CAPTCHA with features available to create an anti-UX 
 |           | `helpText`         | `string`     | [See here](#helptext-default-value) | Used in place of the default help text, shown when the '?' icon is clicked. |
 |           | `minAttempts`      | `number`     | `1`         | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
 |           | `notARobotText`    | `string`     | `"I'm not a robot"` | Used in place of the "I'm not a robot" text. |
-|           | `onClickCheckbox`  | `() => void` | -           | Called on clicking the checkbox, does not execute if the CAPTCHA popup is open. |
+|           | `onClickCheckbox`  | `() => void` | -           | Called on clicking the checkbox. Does not execute if the CAPTCHA popup is open. |
 |           | `onClickVerify`    | `() => void` | -           | Called on clicking the 'Verify' button. |
 |           | `onRefresh`        | `() => void` | -           | Called on clicking the refresh icon. |
 |   ❗       | `onVerificationComplete` | `() => void` | -     | Called on successful verification completion. |
