@@ -184,6 +184,7 @@ const FakeCAPTCHA = (props: FakeCaptchaProps.CaptchaWindow) => {
               <CaptchaHeader
                 headerText={headerText}
                 captchaTopic={captchaTopic}
+                verifyText={verifyText}
               />
 
               <GridArea gridTemplateColumns={gridTemplateColumns()}>
