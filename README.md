@@ -12,7 +12,7 @@ A functional, configurable CAPTCHA with features available to create an anti-UX 
 |           | `captchaTopicText` | `string[]`   | -           | Array of topics to be displayed in the CAPTCHA header. Does not work with `headerText`. |
 |           | `cellsWide`        | `number`     | `4`         | Number of cells in each row. |
 |           | `cellsTall`        | `number`     | `cellsWide` | Number of cells in each column. |
-|   ❗       | `imgTopicUrls`     | [`ImgTopicType[]`](#imagetopictype) | -             | Array of image URLs with associated tags. Tags are case-sensitive and compared to the topic selected from `captchaTopics`. The images will be displayed in order. |
+|   ❗       | `imgTopicUrls`     | [`ImgTopicType`](#imagetopictype) | -             | Array of image URLs with associated tags. Tags are case-sensitive and compared to the topic selected from `captchaTopics`. The images will be displayed in order. |
 |           | `headerText`       | `string`     | [See here](#headertext-default-value) | Used in place of the CAPTCHA header text. Overrides `captchaTopic`.
 |           | `helpText`         | `string`     | [See here](#helptext-default-value) | Used in place of the default help text, shown when the '?' icon is clicked. |
 |           | `minAttempts`      | `number`     | `1`         | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
