@@ -4,6 +4,8 @@ export const CaptchaContainerOuter = styled.div`
   display: inline-block;
   box-shadow: 2px 2px 6px 2px #c1c1c1;
   max-width: 332px;
+  position: absolute;
+  background: white;
 `;
 export const CaptchaContainer = styled.div<{ displayInfo: boolean }>`
   padding: 8px 8px 16px;
