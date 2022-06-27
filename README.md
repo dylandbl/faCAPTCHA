@@ -9,8 +9,7 @@ A functional, configurable, frontend CAPTCHA with features available to create a
 
 | ⚠️ | Property           | Type         | Default value | Description |
 | --- | ------------------ | ------------ | ------------ | ----------- |
-|     | `captchaTopics`    | `string[]`   | [See here](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) | Topics displayed at the top of the CAPTCHA. If not defined, a pseudorandomly selected default value will be used. | 
-|     | `captchaTopicText` | `string[]`   | -            | Array of topics to be displayed in the CAPTCHA header. Does not work with `headerText`. |
+|     | [`captchaTopics`](#captchatopics) | `string[]`   | [See here](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) | Topics displayed at the top of the CAPTCHA. Does not work with `headerText`. | 
 |     | `cellsWide`        | `number`     | `4`          | Number of cells in each row. |
 |     | `cellsTall`        | `number`     | `cellsWide`  | Number of cells in each column. |
 | ⚠️ | [`imgTopicUrls`](#imgtopicurls)     | [`ImgTopicType[]`](#imgtopictype) | - | Array of image URLs with associated topic tags. |
@@ -24,6 +23,9 @@ A functional, configurable, frontend CAPTCHA with features available to create a
 | ⚠️ | `onVerificationComplete` | `() => void` | -      | Called on successful verification completion. |
 |     | [`simulateSlow`](#simulateslow)     | `0 - 3`      | `1`          | Simulates a slow internet connection speed. |
 |     | `verifyText`       | `string`     | `"verify"`   | Text for the 'Verify' button. |
+
+### `captchaTopics`
+An array of case-sensitive topics, from which one item will be randomly selected. The topic appears in the header of the CAPTCHA and it is the phrase or word that the image tags will be compared to. If not defined, a pseudorandomly selected [default value](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) will be used.
 
 ### `imgTopicUrls`
 Topic tags are case-sensitive and compared to the topic selected from `captchaTopics`. The images will be displayed in order. If there are fewer images than cells, the images will repeat. 
