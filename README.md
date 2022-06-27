@@ -1,5 +1,5 @@
 # faCAPTCHA
-[fey-**kap**-ch*uh*] 
+[**fey**-**kap**-ch*uh*] 
 
 A functional, configurable, frontend CAPTCHA with features available to create an anti-UX design. The name is a portmanteau of 'fake' and 'CAPTCHA', but through development it became a real and functional CAPTCHA (with proper configuration). Just be sure to change the `helpText`. faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
 
