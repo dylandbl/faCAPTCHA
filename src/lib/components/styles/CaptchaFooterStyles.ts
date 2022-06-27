@@ -16,10 +16,13 @@ export const SVG = styled.svg<{
   fill?: string;
   allowHover?: boolean;
   spin?: boolean;
+  positionAbsolute?: boolean;
 }>`
   cursor: pointer;
   fill: ${({ fill }) => (fill ? fill : "#545454")};
   transition: fill 0.3s;
+
+  ${({ positionAbsolute }) => positionAbsolute && "position: absolute;"}
 
   ${({ spin }) =>
     spin &&
