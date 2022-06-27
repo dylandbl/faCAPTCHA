@@ -1,11 +1,13 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-export const ClickableImageContainer = styled.div``;
+export const ClickableImageContainer = styled.div`
+  position: relative;
+`;
 
 export const CheckmarkContainer = styled.div`
-  position: relative;
-  left: 56px;
+  position: absolute;
+  right: 20px;
   bottom: 20px;
 `;
 
@@ -22,6 +24,7 @@ export const ClickableImage = styled.button<{
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1;
+  position: absolute;
 
   cursor: pointer;
 
