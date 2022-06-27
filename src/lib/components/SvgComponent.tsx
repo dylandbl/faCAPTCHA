@@ -58,7 +58,7 @@ export const CheckmarkSvg = () => {
         width={18}
         height={18}
         fill="#932093"
-        style={{ position: "absolute" }}
+        positionAbsolute
       >
         <path
           fillRule="evenodd"
