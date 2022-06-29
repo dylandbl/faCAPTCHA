@@ -1,7 +1,12 @@
-import React from "react";
+import Props from "./types/index";
 
-const SayHello = ({ name }: { name: string }): JSX.Element => (
-  <div>Hey {name}, go hello to TypeScript.</div>
-);
+const FaCaptcha = (props: Props.CaptchaButton) => {
+  const { notARobotText, cellsTall } = props;
+  return (
+    <div>
+      Yo {notARobotText}, go the hello to a TypeScript!? {cellsTall}
+    </div>
+  );
+};
 
-export default SayHello;
+export default FaCaptcha;
