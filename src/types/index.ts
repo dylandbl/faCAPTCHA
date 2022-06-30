@@ -1,5 +1,5 @@
 export namespace Props {
-  type ImgTopicType = {
+  export type ImgTopicType = {
     url: string;
     topics: string[];
   };

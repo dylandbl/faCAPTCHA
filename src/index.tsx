@@ -1,12 +1,8 @@
 import Props from "./types/index";
+import { FakeCaptchaButton } from "./components/FakeCaptchaButton/FakeCaptchaButton";
 
 const FaCaptcha = (props: Props.CaptchaButton) => {
-  const { notARobotText, cellsTall } = props;
-  return (
-    <div>
-      Yo {notARobotText}, go the hello to a TypeScript!? {cellsTall}
-    </div>
-  );
+  return <FakeCaptchaButton {...props} />;
 };
 
 export default FaCaptcha;
