@@ -1,10 +1,10 @@
-import { FakeCaptchaProps } from "../types/fakeCaptcha";
-import { CaptchaHeaderDiv } from "./styles/fakeCaptchaStyles";
+import { Props } from "../../types/index";
+import { CaptchaHeaderDiv } from "./CaptchaHeaderStyles";
 
 interface CaptchaHeaderProps {
-  headerText?: FakeCaptchaProps.SharedProps["headerText"];
+  headerText?: Props.SharedProps["headerText"];
   captchaTopic: string;
-  verifyText: FakeCaptchaProps.SharedProps["verifyText"];
+  verifyText: Props.SharedProps["verifyText"];
 }
 
 export const CaptchaHeader = (props: CaptchaHeaderProps) => {

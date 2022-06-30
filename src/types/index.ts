@@ -1,10 +1,10 @@
-export namespace FakeCaptchaProps {
-  type ImgTopicType = {
+export namespace Props {
+  export type ImgTopicType = {
     url: string;
     topics: string[];
   };
 
-  interface SharedProps {
+  export interface SharedProps {
     captchaTopics?: string[]; // CAPTCHA topics. Pseudorandom, default values will be used if captchaTopics is not defined.
     captchaTopicText?: string[]; // Array of topics to be displayed in the CAPTCHA header. Does not work with headerText.
     cellsTall?: number; // Number of cells in each column. If not defined, column heights will be equal to row lengths.
@@ -32,3 +32,5 @@ export namespace FakeCaptchaProps {
     setShowCaptcha: (value: boolean) => void;
   }
 }
+
+export default Props;

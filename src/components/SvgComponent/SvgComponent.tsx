@@ -1,4 +1,4 @@
-import { CheckmarkBackground, SVG } from "./styles/CaptchaFooterStyles";
+import { CheckmarkBackground, SVG } from "./SvgComponentStyles";
 
 interface SVGProps {
   onClick?: () => void;

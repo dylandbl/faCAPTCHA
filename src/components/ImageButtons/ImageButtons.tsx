@@ -3,13 +3,13 @@ import {
   CheckmarkContainer,
   ClickableImage,
   ClickableImageContainer,
-} from "./styles/ImageButtonStyles";
-import { CheckmarkSvg } from "./SvgComponent";
-import { FakeCaptchaProps } from "../types/fakeCaptcha";
+} from "./ImageButtonStyles";
+import { CheckmarkSvg } from "../SvgComponent/SvgComponent";
+import { Props } from "../../types/index";
 
 interface ImageButtonProps {
-  url: FakeCaptchaProps.ImgTopicType["url"];
-  topics: FakeCaptchaProps.ImgTopicType["topics"];
+  url: Props.ImgTopicType["url"];
+  topics: Props.ImgTopicType["topics"];
   handleSelection: (key: string) => void;
   imageKey: string;
 }

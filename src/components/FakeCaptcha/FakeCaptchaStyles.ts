@@ -22,6 +22,7 @@ export const GridArea = styled.div<{ gridTemplateColumns: string }>`
   padding-bottom: 8px;
   border-bottom: 1px solid lightgrey;
   height: 325px;
+  text-align: left;
 `;
 
 export const CentringDiv = styled.div`
@@ -59,23 +60,6 @@ export const VerifyButton = styled.button`
     // 130% the brightness of #932093. Prevents text from brightening.
     background: #bf2abf;
     transition: filter 0.3s;
-  }
-`;
-
-export const CaptchaHeaderDiv = styled.div`
-  background: #932093;
-  color: white;
-  padding: 16px;
-  // Same as <CaptchaContainer> padding.
-  margin-bottom: 8px;
-
-  h4 {
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-    font-size: 0.9rem;
   }
 `;
 

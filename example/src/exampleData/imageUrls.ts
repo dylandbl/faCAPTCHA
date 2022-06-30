@@ -1,6 +1,4 @@
-import { FakeCaptchaProps } from "../types/fakeCaptcha";
-
-const imagesArr1: FakeCaptchaProps.ImgTopicType[] = [
+const imagesArr1 = [
   {
     url: "https://www.publicdomainpictures.net/pictures/340000/velka/freshwater-fish-food-1588844402K9q.jpg",
     topics: ["fish"],

@@ -1,5 +1,5 @@
-import { FooterContainer } from "./styles/CaptchaFooterStyles";
-import { InfoSvg, RefreshSvg } from "./SvgComponent";
+import { FooterContainer } from "./CaptchaFooterStyles";
+import { InfoSvg, RefreshSvg } from "../SvgComponent/SvgComponent";
 
 interface CaptchaFooterProps {
   children: JSX.Element;

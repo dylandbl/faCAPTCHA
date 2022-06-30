@@ -1,4 +1,4 @@
-import { ImageButton } from "./imageButtons";
+import { ImageButton } from "../ImageButtons/ImageButtons";
 import {
   CaptchaContainer,
   CaptchaContainerOuter,
@@ -6,17 +6,17 @@ import {
   GridArea,
   InfoDisplay,
   VerifyButton,
-} from "./styles/fakeCaptchaStyles";
+} from "./FakeCaptchaStyles";
 import { MouseEvent, useEffect, useState } from "react";
-import { CaptchaHeader } from "./CaptchaHeader";
-import { CaptchaFooter } from "./CaptchaFooter";
-import { randomCaptchaTopic } from "../utils/utils";
-import { RefreshSvg } from "./SvgComponent";
-import { Label } from "./styles/FakeCaptchaButtonStyles";
+import { CaptchaHeader } from "../CaptchaHeader/CaptchaHeader";
+import { CaptchaFooter } from "../CaptchaFooter/CaptchaFooter";
+import { randomCaptchaTopic } from "../../utils/index";
+import { RefreshSvg } from "../SvgComponent/SvgComponent";
+import { Label } from "../FakeCaptchaButton/FakeCaptchaButtonStyles";
 import { useCallback } from "react";
-import { FakeCaptchaProps } from "../types/fakeCaptcha";
+import { Props } from "../../types/index";
 
-const FakeCAPTCHA = (props: FakeCaptchaProps.CaptchaWindow) => {
+const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
   const {
     verifyText = "verify",
     onClickVerify,

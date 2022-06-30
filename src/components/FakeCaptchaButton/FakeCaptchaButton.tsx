@@ -1,14 +1,10 @@
 import { MouseEvent, useState } from "react";
-import {
-  CaptchaButton,
-  CheckboxDiv,
-  Label,
-} from "./styles/FakeCaptchaButtonStyles";
-import FakeCAPTCHA from "./fakeCAPTCHA";
+import { CaptchaButton, CheckboxDiv, Label } from "./FakeCaptchaButtonStyles";
+import FakeCAPTCHA from "../FakeCaptcha/FakeCaptcha";
 import { useEffect } from "react";
-import { FakeCaptchaProps } from "../types/fakeCaptcha";
+import { Props } from "../../types/index";
 
-export const FakeCaptchaButton = (props: FakeCaptchaProps.CaptchaButton) => {
+export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
   const {
     notARobotText = "I'm not a robot",
     onClickVerify,
