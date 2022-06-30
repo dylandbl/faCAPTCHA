@@ -6,6 +6,7 @@ export const FooterContainer = styled.div`
   justify-content: space-between;
   position: absolute;
 
+  text-align: left;
   bottom: 16px;
   // -16px to account for padding on each side.
   width: calc(100% - 16px);

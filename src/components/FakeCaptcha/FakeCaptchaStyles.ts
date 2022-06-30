@@ -22,6 +22,7 @@ export const GridArea = styled.div<{ gridTemplateColumns: string }>`
   padding-bottom: 8px;
   border-bottom: 1px solid lightgrey;
   height: 325px;
+  text-align: left;
 `;
 
 export const CentringDiv = styled.div`

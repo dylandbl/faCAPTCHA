@@ -4,6 +4,7 @@ export const CaptchaHeaderDiv = styled.div`
   background: #932093;
   color: white;
   padding: 16px;
+  text-align: left;
   // Same as <CaptchaContainer> padding.
   margin-bottom: 8px;
 
