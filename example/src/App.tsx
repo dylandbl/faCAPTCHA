@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <FaCaptcha
-        notARobotText="Dylan"
         onVerificationComplete={handleVerification}
         imgTopicUrls={imagesArr1}
       />
