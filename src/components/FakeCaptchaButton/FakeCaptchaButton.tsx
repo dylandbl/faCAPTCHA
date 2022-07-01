@@ -19,6 +19,7 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
     simulateSlow = 1,
     headerText,
     captchaTopics,
+    uncloseable,
   } = props;
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
@@ -71,6 +72,7 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
           simulateSlow={simulateSlow}
           headerText={headerText}
           captchaTopics={captchaTopics}
+          uncloseable={uncloseable}
         />
       )}
     </>

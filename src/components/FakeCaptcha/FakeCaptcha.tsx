@@ -15,6 +15,7 @@ import { RefreshSvg } from "../SvgComponent/SvgComponent";
 import { Label } from "../FakeCaptchaButton/FakeCaptchaButtonStyles";
 import { useCallback } from "react";
 import { Props } from "../../types/index";
+import { OverlayDiv } from "../Overlay/OverlayStyles";
 
 const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
   const {
@@ -31,6 +32,7 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     captchaTopics,
     imgTopicUrls,
     helpText,
+    uncloseable = false,
   } = props;
   const initialTopic = captchaTopics
     ? captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
@@ -162,8 +164,13 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setDisplayInfo(!displayInfo);
   };
 
+  const handleClose = () => {
+    if (!uncloseable) setShowCaptcha(false);
+  };
+
   return (
     <>
+      <OverlayDiv onClick={handleClose} />
       <CaptchaContainerOuter>
         <CaptchaContainer displayInfo={displayInfo}>
           {isLoading ? (
