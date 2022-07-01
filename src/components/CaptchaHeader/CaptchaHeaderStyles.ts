@@ -10,6 +10,7 @@ export const CaptchaHeaderDiv = styled.div`
 
   h4 {
     margin: 0;
+    text-align: left;
   }
 
   p {

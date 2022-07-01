@@ -2,10 +2,11 @@ import styled from "@emotion/styled";
 
 export const CaptchaContainerOuter = styled.div`
   display: inline-block;
-  box-shadow: 2px 2px 6px 2px #c1c1c1;
+  box-shadow: 2px 2px 6px 2px #54545457;
   max-width: 332px;
   position: absolute;
   background: white;
+  z-index: 1;
 `;
 export const CaptchaContainer = styled.div<{ displayInfo: boolean }>`
   padding: 8px 8px 16px;
