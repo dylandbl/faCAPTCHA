@@ -15,6 +15,7 @@ import { RefreshSvg } from "../SvgComponent/SvgComponent";
 import { Label } from "../FakeCaptchaButton/FakeCaptchaButtonStyles";
 import { useCallback } from "react";
 import { Props } from "../../types/index";
+import { OverlayDiv } from "../Overlay/OverlayStyles";
 
 const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
   const {
@@ -28,14 +29,12 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setCaptchaPassed,
     setShowCaptcha,
     minAttempts = 1,
-    captchaTopicText,
+    captchaTopics,
     imgTopicUrls,
     helpText,
   } = props;
-  const initialTopic = captchaTopicText
-    ? captchaTopicText[
-        Math.floor(Math.random() * (captchaTopicText.length - 1))
-      ]
+  const initialTopic = captchaTopics
+    ? captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
     : randomCaptchaTopic() ?? "string";
   const [captchaTopic, setCaptchaTopic] = useState(initialTopic);
   const [isLoading, setIsLoading] = useState(true);
@@ -115,14 +114,12 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setTimeout(() => setIsLoading(false), connectionSpeed);
 
     // Then set the new topic.
-    captchaTopicText
+    captchaTopics
       ? setCaptchaTopic(
-          captchaTopicText[
-            Math.floor(Math.random() * (captchaTopicText.length - 1))
-          ]
+          captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
         )
       : setCaptchaTopic(randomCaptchaTopic());
-  }, [setIsLoading, connectionSpeed, onRefresh, captchaTopicText]);
+  }, [setIsLoading, connectionSpeed, onRefresh, captchaTopics]);
 
   // Verifies that all guesses were correct.
   const verify = () => {
@@ -166,8 +163,13 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setDisplayInfo(!displayInfo);
   };
 
+  const handleClose = () => {
+    setShowCaptcha(false);
+  };
+
   return (
     <>
+      <OverlayDiv onClick={handleClose} />
       <CaptchaContainerOuter>
         <CaptchaContainer displayInfo={displayInfo}>
           {isLoading ? (

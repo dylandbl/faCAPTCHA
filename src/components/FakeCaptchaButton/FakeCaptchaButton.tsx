@@ -18,6 +18,7 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
     helpText,
     simulateSlow = 1,
     headerText,
+    captchaTopics,
   } = props;
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
@@ -69,6 +70,7 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
           helpText={helpText}
           simulateSlow={simulateSlow}
           headerText={headerText}
+          captchaTopics={captchaTopics}
         />
       )}
     </>
