@@ -6,7 +6,6 @@ export namespace Props {
 
   export interface SharedProps {
     captchaTopics?: string[]; // CAPTCHA topics. Pseudorandom, default values will be used if captchaTopics is not defined.
-    captchaTopicText?: string[]; // Array of topics to be displayed in the CAPTCHA header. Does not work with headerText.
     cellsTall?: number; // Number of cells in each column. If not defined, column heights will be equal to row lengths.
     cellsWide?: number; // Number of cells in each row.
     headerText?: string; // Used in place of the CAPTCHA header text. Overrides captchaTopic.
