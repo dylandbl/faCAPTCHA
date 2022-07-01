@@ -23,7 +23,7 @@ A functional, configurable, frontend CAPTCHA with features available to create a
 |     | `onRefresh`                       | `() => void`                      | -                                                                                          | Called on clicking the refresh icon.                                                        |
 | ⚠️  | `onVerificationComplete`          | `() => void`                      | -                | Called on successful verification completion. |
 |     | [`simulateSlow`](#simulateslow)   | `0 - 3`                           | `1`              | Simulates a slow internet connection speed. |
-|     | `uncloseable`                     | `boolean                          | 'false'          | Prevents the CAPTCHA from being closed until verification is complete. |
+|     | `uncloseable`                     | `boolean`                          | `false`          | Prevents the CAPTCHA from being closed until verification is complete. |
 |     | `verifyText`                      | `string`                          | `"verify"`       | Text for the 'Verify' button. |
 
 ### `captchaTopics`
