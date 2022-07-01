@@ -6,7 +6,7 @@ export const CaptchaContainerOuter = styled.div`
   max-width: 332px;
   position: absolute;
   background: white;
-  z-index: 1;
+  z-index: 2000000000; // This is what Google does, so it's okay.
 `;
 export const CaptchaContainer = styled.div<{ displayInfo: boolean }>`
   padding: 8px 8px 16px;

@@ -15,6 +15,7 @@ export namespace Props {
     onClickVerify?: () => void; // Function to execute on clicking 'Verify'.
     onRefresh?: () => void; // Executes on clicking the refresh icon.
     simulateSlow?: 0 | 1 | 2 | 3; // Simulate a slow internet connection.
+    uncloseable?: boolean; // Prevent the CAPTCHA from being closed until verification is complete.
     verifyText?: string; // Text for the 'Verify' button.
   }
 
