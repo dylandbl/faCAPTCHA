@@ -11,7 +11,7 @@ export const CaptchaHeader = (props: CaptchaHeaderProps) => {
   const { headerText, captchaTopic, verifyText } = props;
 
   return (
-    <CaptchaHeaderDiv>
+    <CaptchaHeaderDiv centerTextVertically={Boolean(headerText)}>
       {headerText ? (
         <p>{headerText}</p>
       ) : (
