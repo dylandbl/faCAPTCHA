@@ -23,20 +23,6 @@ export const ContentBody = styled.div`
     text-align: center;
   }
 
-  .intro-p {
-    text-align: justify;
-    margin-top: 42px;
-    margin-bottom: 0;
-    background: #932093;
-    padding: 25px;
-    border-radius: 4px;
-    color: white;
-
-    > .darkText {
-      color: black;
-    }
-  }
-
   .fancy-a {
     width: 0;
     padding: 0px 4px;
@@ -51,6 +37,22 @@ export const ContentBody = styled.div`
       width: 100%;
       transition: width 0.3s, background-color 0.3s;
     }
+  }
+`;
+
+export const IntroP = styled.p<{ screenWidth: number }>`
+  text-align: justify;
+
+  margin: 42px ${({ screenWidth }) => (screenWidth < 800 ? "64px" : "0")} 0;
+  background: #932093;
+  padding: 25px;
+  border-radius: 4px;
+  color: white;
+
+  transition: margin 0.4s;
+
+  > .darkText {
+    color: black;
   }
 `;
 
