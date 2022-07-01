@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": false,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -29,7 +31,8 @@
     "extends": "react-app",
     "rules": {
       "react/react-in-jsx-scope": "off",
-      "react/jsx-uses-react": "off"
+      "react/jsx-uses-react": "off",
+      "no-console": "warn"
     }
   },
   "browserslist": {
