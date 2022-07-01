@@ -26,7 +26,7 @@ export const Header = ({ screenWidth }: { screenWidth: number }) => {
       {screenWidth < 1272 && (
         <ul className="topNav-ul">
           <li>
-            <a href="Top">Top</a>
+            <a href="#Top">Top</a>
           </li>
           <li>
             <a href="#Demos">Demos</a>
