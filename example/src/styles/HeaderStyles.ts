@@ -16,7 +16,7 @@ export const HeaderDiv = styled.div`
 
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 2000000001; // One more than Google's solution.
 
   > .topNav-ul {
     font-weight: 500;
