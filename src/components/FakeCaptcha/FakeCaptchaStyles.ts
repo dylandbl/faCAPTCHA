@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const CaptchaContainerOuter = styled.div`
   display: inline-block;
   box-shadow: 2px 2px 6px 2px #54545457;
-  max-width: 332px;
+  max-width: 316px;
   position: absolute;
   background: white;
   z-index: 2000000000; // This is what Google does, so it's okay.
@@ -11,7 +11,7 @@ export const CaptchaContainerOuter = styled.div`
 export const CaptchaContainer = styled.div<{ displayInfo: boolean }>`
   padding: 8px 8px 16px;
   width: 316px;
-  height: 480px;
+  height: 500px;
   position: relative;
   border-radius: 2px;
 `;
