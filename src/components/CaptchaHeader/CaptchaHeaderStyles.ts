@@ -21,6 +21,11 @@ export const CaptchaHeaderDiv = styled.div<{ centerTextVertically: boolean }>`
   h4 {
     margin: 0;
     text-align: left;
+    width: 268px;
+    height: 21px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   p {
