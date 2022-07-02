@@ -2,13 +2,15 @@ import { Pre } from "../styles/CodeBlockStyles";
 
 export const CodeBlock = ({
   children,
-  screenWidth,
+  margin,
+  show = true,
 }: {
-  children: string;
-  screenWidth: number;
+  children: string | string[];
+  margin?: "top" | "left";
+  show?: boolean;
 }) => {
   return (
-    <Pre screenWidth={screenWidth}>
+    <Pre margin={margin} show={show}>
       <code>{children}</code>
     </Pre>
   );
