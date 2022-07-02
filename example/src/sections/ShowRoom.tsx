@@ -234,7 +234,7 @@ export const ShowRoom = () => {
               <br />
 
               <p>
-                See the{" "}
+                For a full list of features and API information, see the{" "}
                 <a
                   className="fancy-a"
                   href="https://github.com/dylandbl/faCAPTCHA#api"
@@ -244,8 +244,8 @@ export const ShowRoom = () => {
                 >
                   repo on Github
                   <ExternalLinkSvg />
-                </a>{" "}
-                for a complete list of features and API information.
+                </a>
+                .
               </p>
             </div>
           </InputsContainer>
