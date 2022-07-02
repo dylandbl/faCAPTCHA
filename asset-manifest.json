@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/faCAPTCHA/static/css/main.e5cda47e.css",
+    "main.js": "/faCAPTCHA/static/js/main.5b37f3a3.js",
+    "index.html": "/faCAPTCHA/index.html",
+    "main.e5cda47e.css.map": "/faCAPTCHA/static/css/main.e5cda47e.css.map",
+    "main.5b37f3a3.js.map": "/faCAPTCHA/static/js/main.5b37f3a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5cda47e.css",
+    "static/js/main.5b37f3a3.js"
+  ]
+}
