@@ -1,18 +1,12 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-export const Pre = styled.pre<{ show: boolean; margin?: "top" | "left" }>`
+export const Pre = styled.pre<{ show: boolean }>`
   background: #e7e7e7;
   border-radius: 4px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  max-height: fit-content;
-  margin: ${({ margin }) =>
-    margin === "top"
-      ? "26px 0 10px 0"
-      : margin === "left"
-      ? "0 0 10px 26px"
-      : "0 0 10px 0"};
+  margin: 0 0 10px 0;
 
   ${({ show }) =>
     show
