@@ -78,7 +78,7 @@ export const ShowRoom = () => {
   imgTopicUrls={}`}
           {captchaTopicsValue[0] === ""
             ? ""
-            : `\n  captchaTopics={[${captchaTopicsValue}]}`}
+            : `\n  captchaTopics={["${captchaTopicsValue}"]}`}
           {cellsWideValue === 4 ? "" : `\n  cellsWide={${cellsWideValue}}`}
           {simulateSlowValue === 1
             ? ""
