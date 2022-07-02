@@ -53,7 +53,7 @@ export const InputsContainer = styled.div<{ show: boolean }>`
     margin-left: 4px;
 
     &.textInputLabel {
-      margin-top: 6px;
+      margin: 6px 0 0 0;
       display: inline-block;
     }
   }
