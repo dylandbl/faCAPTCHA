@@ -30,7 +30,7 @@ export const Examples = () => {
             simulateSlow={2}
           />
           <CodeBlock
-            screenWidth={screenWidth}
+            margin={screenWidth < 1272 ? "top" : "left"}
           >{`<FaCaptcha simulateSlow={2} />`}</CodeBlock>
         </div>
       </ExampleDiv>
@@ -46,7 +46,7 @@ export const Examples = () => {
             helpText="Click CLICK!"
             headerText="Click the correct image"
           />
-          <CodeBlock screenWidth={screenWidth}>
+          <CodeBlock margin={screenWidth < 1272 ? "top" : "left"}>
             {`<FaCaptcha
   notARobotText="Click me! CLICK ME!"
   verifyText="CLICK"
@@ -67,7 +67,7 @@ export const Examples = () => {
             helpText="Hier finden Sie keine Hilfe!"
             headerText="选择带有汽车的图像。"
           />
-          <CodeBlock screenWidth={screenWidth}>
+          <CodeBlock margin={screenWidth < 1272 ? "top" : "left"}>
             {`<FaCaptcha
   notARobotText="No soy un robot"
   verifyText="Vérifier"
@@ -86,7 +86,7 @@ export const Examples = () => {
             simulateSlow={0}
             captchaTopics={["sportsmanship", "mail carriers", "Ireland"]}
           />
-          <CodeBlock screenWidth={screenWidth}>
+          <CodeBlock margin={screenWidth < 1272 ? "top" : "left"}>
             {`<FaCaptcha
   captchaTopics={["sportsmanship", "mail carriers", "Ireland"]}
 />`}
@@ -102,7 +102,7 @@ export const Examples = () => {
             captchaTopics={["CAPTCHA"]}
           />
           <CodeBlock
-            screenWidth={screenWidth}
+            margin={screenWidth < 1272 ? "top" : "left"}
           >{`<FaCaptcha captchaTopics={["CAPTCHA"]} />`}</CodeBlock>
         </div>
       </ExampleDiv>
@@ -126,7 +126,7 @@ export const Examples = () => {
             ]}
             simulateSlow={0}
           />
-          <CodeBlock screenWidth={screenWidth}>{`<FaCaptcha
+          <CodeBlock margin={screenWidth < 1272 ? "top" : "left"}>{`<FaCaptcha
   imgTopicUrls={[  
     {
       url: "https://images.rawpixel.com/image_1000/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BkMzYtNi1hczExLTQwLTU4NzVfb3JpZy5qcGc.jpg",
@@ -155,7 +155,7 @@ export const Examples = () => {
             simulateSlow={0}
             cellsWide={2}
           />
-          <CodeBlock screenWidth={screenWidth}>{`<FaCaptcha
+          <CodeBlock margin={screenWidth < 1272 ? "top" : "left"}>{`<FaCaptcha
   imgTopicUrls={[  
     {
       url: "https://images.rawpixel.com/image_1000/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BkMzYtNi1hczExLTQwLTU4NzVfb3JpZy5qcGc.jpg",
