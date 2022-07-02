@@ -238,13 +238,14 @@ export const ShowRoom = () => {
                 <a
                   className="fancy-a"
                   href="https://github.com/dylandbl/faCAPTCHA#api"
+                  rel="noreferrer"
                   title="https://github.com/dylandbl/faCAPTCHA#api"
                   target="_blank"
                 >
                   repo on Github
                   <ExternalLinkSvg />
                 </a>{" "}
-                for complete list of features and API information.
+                for a complete list of features and API information.
               </p>
             </div>
           </InputsContainer>
