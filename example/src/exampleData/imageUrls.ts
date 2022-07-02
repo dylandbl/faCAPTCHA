@@ -107,7 +107,7 @@ export const imagesArr2 = [
   },
   {
     url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMzUtcGRzdHViYnMwMDExNC1pbWFnZTAxXzEuanBn.jpg",
-    topics: ["horse", "skeleton", "illustrations", "art"],
+    topics: ["horse", "a skeleton", "skeletons", "illustrations", "art"],
   },
   {
     url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGRmbWE0LXBkamVhbmJlcm5hcmQwMDAyOC1pbWFnZS5qcGc.jpg",
@@ -125,10 +125,37 @@ export const imagesArr2 = [
     url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc5LTAzNS14LmpwZw.jpg",
     topics: ["cats", "a cat", "illustrations", "art"],
   },
-
   {
     url: "https://images.rawpixel.com/image_1000/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjcxMi0xODQtdi5qcGc.jpg",
     topics: ["pigs", "a pig", "illustrations", "art"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_1000/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BkMjM1LXBkc3R1YmJzMDAxNTctaW1hZ2UwMV80LmpwZw.jpg",
+    topics: ["zebra", "painting"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc4LTI0MC14LmpwZw.jpg",
+    topics: ["a tiger", "tigers", "cats", "a cat", "illustration"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_1000/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3BkMTAzLW1pc2N0aGVtZXQwMDE3Ny1pbWFnZV8yLmpwZw.jpg",
+    topics: ["flowers", "peonies", "painting"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMDItMTYuanBn.jpg",
+    topics: ["a mountain", "mountains", "woodblock print", "print"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMzUtcGRzdHViYnMwMDAwNS1pbWFnZV8zLmpwZw.jpg",
+    topics: ["skeletons", "a skeleton", "a human", "humans", "illustration"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMzUtcGRzdHViYnMwMDExNS1pbWFnZV80LmpwZw.jpg",
+    topics: ["a dog", "dogs"],
+  },
+  {
+    url: "https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMTAtMDA3XzMuanBn.jpg",
+    topics: ["birds", "a bird", "print", "pheasants"],
   },
 ];
 

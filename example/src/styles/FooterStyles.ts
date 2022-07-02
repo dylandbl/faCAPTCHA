@@ -9,6 +9,8 @@ export const FooterContainer = styled.div`
   color: #545454;
   padding: 6px 16px 0;
   font-size: 0.7rem;
+  position: absolute;
+  bottom: 0;
 
   > a {
     text-decoration: none;

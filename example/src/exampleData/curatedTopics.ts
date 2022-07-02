@@ -1,0 +1,26 @@
+const topics = [
+  "monster trucks",
+  "bicycles",
+  "fish",
+  "skeletons",
+  "street signs",
+  "dogs",
+  "pigs",
+  "birds",
+  "motor vehicles",
+  "a crosswalk",
+  "traffic lights",
+  "mountains",
+  "houses",
+  "bridges",
+  "a fire hydrant",
+  "public transportation",
+  "a fruit",
+  "the Golden Gate Bridge",
+  "mythological creatures",
+  "country flags",
+  "Zdzisław Beksiński",
+  "Canadian rye",
+];
+
+export default topics;

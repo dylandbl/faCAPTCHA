@@ -2,13 +2,13 @@ import { Pre } from "../styles/CodeBlockStyles";
 
 export const CodeBlock = ({
   children,
-  screenWidth,
+  show = true,
 }: {
-  children: string;
-  screenWidth: number;
+  children: string | string[];
+  show?: boolean;
 }) => {
   return (
-    <Pre screenWidth={screenWidth}>
+    <Pre show={show}>
       <code>{children}</code>
     </Pre>
   );

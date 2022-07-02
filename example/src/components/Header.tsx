@@ -22,17 +22,6 @@ export const Header = ({ screenWidth }: { screenWidth: number }) => {
           <UserIcon />
         </a>
       </RightSideContainer>
-
-      {screenWidth < 1272 && (
-        <ul className="topNav-ul">
-          <li>
-            <a href="#Top">Top</a>
-          </li>
-          <li>
-            <a href="#Demos">Demos</a>
-          </li>
-        </ul>
-      )}
     </HeaderDiv>
   );
 };
