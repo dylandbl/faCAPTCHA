@@ -5,10 +5,9 @@ export const HeaderDiv = styled.div`
   padding: 0 10px;
   // 100% - padding.
   width: 100%;
-  background: #761a76;
+  background: white;
   border-radius: 0 0 8px 8px;
   margin-bottom: 10px;
-  color: white;
 
   display: flex;
   align-items: flex-end;
@@ -30,7 +29,7 @@ export const HeaderDiv = styled.div`
 
     a {
       text-decoration: none;
-      color: white;
+      color: black;
     }
   }
 `;
@@ -42,6 +41,12 @@ export const TitleDiv = styled.div`
 
 export const RightSideContainer = styled.div`
   display: flex;
+  width: 131px;
+  justify-content: center;
+
+  a:nth-of-type(2) {
+    margin-left: 12px;
+  }
 `;
 
 export const UserIconDiv = styled.div<{ background: string }>`
@@ -50,7 +55,6 @@ export const UserIconDiv = styled.div<{ background: string }>`
   width: 26px;
   border-radius: 50%;
   background: red;
-  margin-left: 12px;
 
   background-image: url(${({ background }) => background});
   background-repeat: no-repeat;
