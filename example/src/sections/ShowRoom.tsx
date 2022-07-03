@@ -10,6 +10,7 @@ import { CodeBlock } from "../components/CodeBlock";
 import { useState } from "react";
 import topics from "../exampleData/curatedTopics";
 import { ExternalLinkSvg } from "../components/ExternalLinkSvg";
+import { useWindowSize } from "../utils/hooks";
 
 export const ShowRoom = () => {
   const [showCode, setShowCode] = useState(false);
@@ -69,35 +70,39 @@ export const ShowRoom = () => {
     }, 10);
   };
 
+  const smallScreen = useWindowSize() <= 664;
+
   return (
     <ShowRoomContainer>
-      <div className="codeBlockContainer">
-        <CodeBlock show={showCode}>
-          {`<FaCaptcha
+      {!smallScreen && (
+        <div className="codeBlockContainer">
+          <CodeBlock show={showCode}>
+            {`<FaCaptcha
   onVerificationComplete={}
   imgTopicUrls={}`}
-          {captchaTopicsValue[0] === ""
-            ? ""
-            : `\n  captchaTopics={["${captchaTopicsValue}"]}`}
-          {cellsWideValue === 4 ? "" : `\n  cellsWide={${cellsWideValue}}`}
-          {simulateSlowValue === 1
-            ? ""
-            : `\n  simulateSlow={${simulateSlowValue}}`}
-          {minAttemptsValue === 1
-            ? ""
-            : `\n  minAttempts={${minAttemptsValue}}`}
-          {notARobotTextValue === "I'm not a robot"
-            ? ""
-            : `\n  notARobotText="${notARobotTextValue}"`}
-          {verifyTextValue === "verify"
-            ? ""
-            : `\n  verifyText={${verifyTextValue}}`}
-          {!uncloseableValue ? "" : `\n  uncloseable`}
-          {`\n/>`}
-        </CodeBlock>
-      </div>
+            {captchaTopicsValue[0] === ""
+              ? ""
+              : `\n  captchaTopics={["${captchaTopicsValue}"]}`}
+            {cellsWideValue === 4 ? "" : `\n  cellsWide={${cellsWideValue}}`}
+            {simulateSlowValue === 1
+              ? ""
+              : `\n  simulateSlow={${simulateSlowValue}}`}
+            {minAttemptsValue === 1
+              ? ""
+              : `\n  minAttempts={${minAttemptsValue}}`}
+            {notARobotTextValue === "I'm not a robot"
+              ? ""
+              : `\n  notARobotText="${notARobotTextValue}"`}
+            {verifyTextValue === "verify"
+              ? ""
+              : `\n  verifyText={${verifyTextValue}}`}
+            {!uncloseableValue ? "" : `\n  uncloseable`}
+            {`\n/>`}
+          </CodeBlock>
+        </div>
+      )}
 
-      <FlexContainer>
+      <FlexContainer smallScreen={smallScreen}>
         {showFaCaptcha ? (
           <FaCaptcha
             onVerificationComplete={() => {}}
@@ -129,9 +134,11 @@ export const ShowRoom = () => {
                 <ShowCodeButton onClick={handleResetFields}>
                   (Reset)
                 </ShowCodeButton>{" "}
-                <ShowCodeButton onClick={handleToggleCodeView}>
-                  [{showCode ? "Hide" : "View"} code]
-                </ShowCodeButton>
+                {!smallScreen && (
+                  <ShowCodeButton onClick={handleToggleCodeView}>
+                    [{showCode ? "Hide" : "View"} code]
+                  </ShowCodeButton>
+                )}
               </>
             )}{" "}
             <ShowCodeButton onClick={handleToggleConfig}>
