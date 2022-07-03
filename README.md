@@ -1,11 +1,16 @@
 # faCAPTCHA
 
+👉 **Try it out: [dylandbl.github.io/faCAPTCHA](https://dylandbl.github.io/faCAPTCHA/)**
+
+<img src="https://user-images.githubusercontent.com/48745406/176952369-fa0f699b-a5f9-4ecc-8ebb-ef49a44ee4a1.png" alt="Screenshot of faCAPTCHA" align="left"> 
+
+<br /><br /><br /><br /><br /><br />
+  
 [**fey**-**kap**-ch*uh*]
 
-A functional, configurable, frontend CAPTCHA with features available to create an anti-UX design. The name is a portmanteau of 'fake' and 'CAPTCHA', but through development it became a real and functional CAPTCHA (with proper configuration). Just be sure to change the `helpText`. faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
+A functional, configurable, frontend CAPTCHA with features available to create an anti-UX design. The name is a portmanteau of 'fake' and 'CAPTCHA', but through development, it became a real and functional CAPTCHA. Just be sure to change the [`helpText`](#helptext-default-value). faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
 
-![Screenshot 2022-07-01 123516](https://user-images.githubusercontent.com/48745406/176952369-fa0f699b-a5f9-4ecc-8ebb-ef49a44ee4a1.png)
-
+<br clear="both" />
 
 ## API
 
