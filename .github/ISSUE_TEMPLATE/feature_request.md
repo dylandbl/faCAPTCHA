@@ -7,6 +7,7 @@ assignees: ''
 
 ---
 
+<!-- Add an 'x' between the square brackets to create a checkmark: [x] -->
 [ ] Demo site
 [ ] CAPTCHA
 
