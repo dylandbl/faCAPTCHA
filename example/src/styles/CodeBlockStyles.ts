@@ -48,7 +48,7 @@ export const CopiedNotice = styled.span`
 
   @keyframes copiedAnimation {
     from {
-      top: -16px;
+      top: -22px;
       opacity: 1;
     }
     to {
