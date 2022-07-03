@@ -42,13 +42,13 @@ export const InputsContainer = styled.div<{ show: boolean }>`
   ${({ show }) =>
     show
       ? css`
-          height: 335px;
+          height: 385px;
         `
       : css`
           height: 0;
         `}
 
-  transition: height 0.3s linear, padding 0.45s linear;
+  transition: height 0.3s linear;
 
   label {
     margin-left: 4px;
@@ -61,7 +61,14 @@ export const InputsContainer = styled.div<{ show: boolean }>`
 
   .inputsInnerContainer {
     width: 275px;
-    height: 202px;
+    padding: 6px 12px;
+  }
+
+  .dropdownLabel {
+    margin-left: 0;
+  }
+  select {
+    width: 177px;
   }
 
   .num-input {

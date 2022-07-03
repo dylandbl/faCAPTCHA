@@ -1,26 +1,21 @@
-const topics = [
-  "monster trucks",
-  "bicycles",
-  "fish",
+export const topics1 = [
   "skeletons",
-  "street signs",
   "dogs",
   "pigs",
   "birds",
-  "motor vehicles",
-  "a crosswalk",
-  "traffic lights",
   "mountains",
-  "houses",
-  "bridges",
-  "a fire hydrant",
-  "public transportation",
-  "a fruit",
-  "the Golden Gate Bridge",
-  "mythological creatures",
-  "country flags",
-  "Zdzisław Beksiński",
-  "Canadian rye",
+  "rodents",
+  "humans",
+  "equines",
 ];
 
-export default topics;
+export const topics2 = [
+  "motor vehicles",
+  "a crosswalk",
+  "street lights",
+  "mountains",
+  "public transportation",
+  "buildings",
+  "bicycles",
+  "sidewalks",
+];
