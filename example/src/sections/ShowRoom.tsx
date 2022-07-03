@@ -5,10 +5,10 @@ import {
   ShowRoomContainer,
 } from "../styles/ShowRoomStyles";
 import FaCaptcha from "typescript-react-test";
-import { imagesArr2 } from "../exampleData/imageUrls";
+import { demo1, demo2 } from "../exampleData/imageUrls";
 import { CodeBlock } from "../components/CodeBlock";
 import { useState } from "react";
-import topics from "../exampleData/curatedTopics";
+import { topics1, topics2 } from "../exampleData/curatedTopics";
 import { ExternalLinkSvg } from "../components/ExternalLinkSvg";
 import { useWindowSize } from "../utils/hooks";
 
@@ -25,6 +25,7 @@ export const ShowRoom = () => {
   };
   const [showFaCaptcha, setShowCaptcha] = useState(true);
   // Codeblock values.
+  const [imgTopicUrlsValue, setImgTopicUrlsValue] = useState("demo1");
   const [simulateSlowValue, setSimulateSlowValue] = useState(0);
   const [cellsWideValue, setCellsWideValue] = useState(3);
   const [minAttemptsValue, setMinAttemptsValue] = useState(1);
@@ -34,6 +35,10 @@ export const ShowRoom = () => {
   const [captchaTopicsValue, setCaptchaTopicsValue] = useState([""]);
   const [verifyTextValue, setVerifyTextValue] = useState("verify");
   const [allowRetryValue, setAlowRetryValue] = useState(true);
+
+  const handleImgTopicUrlsChange = (value: string) => {
+    setImgTopicUrlsValue(value);
+  };
 
   const handleSimulateSlowChange = (value: string) =>
     setSimulateSlowValue(Number(value));
@@ -58,6 +63,7 @@ export const ShowRoom = () => {
   const handleAllowRetry = (value: boolean) => setAlowRetryValue(value);
 
   const handleResetFields = () => {
+    setImgTopicUrlsValue("demo1");
     setSimulateSlowValue(0);
     setCellsWideValue(3);
     setMinAttemptsValue(1);
@@ -83,7 +89,7 @@ export const ShowRoom = () => {
           <CodeBlock show={showCode}>
             {`<FaCaptcha
   onVerificationComplete={}
-  imgTopicUrls={}`}
+  imgTopicUrls={${imgTopicUrlsValue}}`}
             {captchaTopicsValue[0] === ""
               ? ""
               : `\n  captchaTopics={["${captchaTopicsValue}"]}`}
@@ -112,12 +118,16 @@ export const ShowRoom = () => {
           <FaCaptcha
             allowRetry={allowRetryValue}
             onVerificationComplete={() => {}}
-            imgTopicUrls={imagesArr2}
+            imgTopicUrls={imgTopicUrlsValue === "demo1" ? demo1 : demo2}
             captchaTopics={
-              captchaTopicsValue[0] === "" ? topics : captchaTopicsValue
+              captchaTopicsValue[0] !== ""
+                ? captchaTopicsValue
+                : imgTopicUrlsValue === "demo1"
+                ? topics1
+                : topics2
             }
             cellsWide={cellsWideValue}
-            // @ts-ignore
+            // @ts-ignore // 'number' is not assignable to '0 | 1 | 2 | 3'.
             simulateSlow={simulateSlowValue}
             minAttempts={minAttemptsValue}
             uncloseable={uncloseableValue}
@@ -167,6 +177,21 @@ export const ShowRoom = () => {
               .
             </p>
             <div className="inputsInnerContainer">
+              <label htmlFor="imgTopicUrls" className="dropdownLabel">
+                Select images for demo
+              </label>
+              <select
+                id="imgTopicUrls"
+                name="imgTopicUrls"
+                className="dropdownLabel"
+                value={imgTopicUrlsValue}
+                onChange={(e) => handleImgTopicUrlsChange(e.target.value)}
+              >
+                <option value="demo1">Demo 1</option>
+                <option value="demo2">Demo 2 (3x3 grid)</option>
+              </select>
+              <br />
+
               <input
                 className="num-input"
                 type="number"
@@ -203,7 +228,7 @@ export const ShowRoom = () => {
                 max={40}
                 onChange={(e) => handleMinAttemptsChange(e.target.value)}
               />
-              <label htmlFor="minAttempts">Minimum number of attempts</label>
+              <label htmlFor="minAttempts">Minimum attempts</label>
               <br />
 
               <input
