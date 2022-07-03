@@ -6,7 +6,8 @@ export const Pre = styled.pre<{ show: boolean }>`
   border-radius: 4px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  margin: 0 0 10px 0;
+  margin: -20px 0 10px 0;
+  position: relative;
 
   ${({ show }) =>
     show
@@ -22,4 +23,37 @@ export const Pre = styled.pre<{ show: boolean }>`
         `}
 
   transition: width 0.3s ease-in, padding 0.45s linear;
+
+  .copyIcon {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+
+    :active {
+      fill: #bf2abf;
+    }
+  }
+`;
+
+export const CopiedNotice = styled.span`
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  right: -406px;
+  opacity: 0;
+
+  &.animateCopied {
+    animation: copiedAnimation 1s;
+  }
+
+  @keyframes copiedAnimation {
+    from {
+      top: -16px;
+      opacity: 1;
+    }
+    to {
+      top: -60px;
+      opacity: 0;
+    }
+  }
 `;
