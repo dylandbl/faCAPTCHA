@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const FooterContainer = styled.div`
   height: 26px;
   width: calc(100% - 32px);
-  margin: 0 16px;
+  margin: 16px 16px 0;
   background: white;
   border-top: 2px solid lightgrey;
   color: #545454;

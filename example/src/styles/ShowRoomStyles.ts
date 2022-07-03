@@ -23,14 +23,15 @@ export const ShowCodeButton = styled.div`
   }
 `;
 
-export const FlexContainer = styled.div`
+export const FlexContainer = styled.div<{ smallScreen?: boolean }>`
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
-  width: 100vw;
+  align-items: ${({ smallScreen }) => (smallScreen ? "center" : "flex-start")};
+  ${({ smallScreen }) => smallScreen && "flex-direction: column-reverse;"}
+  width: 100%;
   max-width: 1000px;
   min-height: 280px;
-  margin: 20px auto 0px;
+  margin: ${({ smallScreen }) => (smallScreen ? "48px" : "20px")} auto 0px;
 `;
 
 export const InputsContainer = styled.div<{ show: boolean }>`
