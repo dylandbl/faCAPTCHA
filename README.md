@@ -13,6 +13,7 @@ A functional, configurable, frontend CAPTCHA with features available to create a
 
 | ⚠️  | Property                          | Type                              | Default value    | Description   |
 | --- | --------------------------------- | --------------------------------- | ---------------- | ------------- |
+|     | `allowRetry`                      | `boolean`                         | `false`          | Allows the user to retry the CAPTCHA after verification is complete. |
 |     | [`captchaTopics`](#captchatopics) | `string[]`                        | [See here](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) | Topics displayed at the top of the CAPTCHA. Does not work with `headerText`. |
 |     | `cellsWide`                       | `number`                          | `4`              | Number of cells in each row.                                                                |
 |     | `cellsTall`                       | `number`                          | `cellsWide`      | Number of cells in each column. |
