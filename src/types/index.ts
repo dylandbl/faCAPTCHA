@@ -20,6 +20,7 @@ export namespace Props {
   }
 
   export interface CaptchaButton extends SharedProps {
+    allowRetry?: boolean; // Allows the users to retry the CAPTCHA if they press the checkmark again.
     notARobotText?: string; // Used in place of "I'm not a robot".
     onClickCheckbox?: () => void; // Executes on clicking the checkbox, does not execute if the CAPTCHA popup is open.
     onVerificationComplete: () => void; // Sets verified state on completion.

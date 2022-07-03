@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 import { CaptchaButton, CheckboxDiv, Label } from "./FakeCaptchaButtonStyles";
 import FakeCAPTCHA from "../FakeCaptcha/FakeCaptcha";
 import { useEffect } from "react";
@@ -6,6 +6,7 @@ import { Props } from "../../types/index";
 
 export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
   const {
+    allowRetry = false,
     notARobotText = "I'm not a robot",
     onClickVerify,
     onVerificationComplete,
@@ -26,10 +27,16 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
   const [checked, setChecked] = useState(false);
   const poweredByText = "Powered by faCAPTCHA";
 
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault();
-    setShowCaptcha(true);
-    if (showCaptcha && onClickCheckbox) onClickCheckbox();
+  // Handle clicking the large checkbox.
+  const handleClick = () => {
+    if (allowRetry && checked) setChecked(false);
+
+    if (!captchaPassed || allowRetry) {
+      setCaptchaPassed(false);
+      setShowCaptcha(true);
+    }
+
+    if (!showCaptcha && onClickCheckbox) onClickCheckbox();
   };
 
   // Delays displaying the checkmark.
@@ -45,7 +52,7 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
       <CaptchaButton>
         <CheckboxDiv>
           <input
-            onClick={(e) => handleClick(e)}
+            onClick={handleClick}
             type="checkbox"
             id="captcha-checkbox"
             name="fake-captcha-checkbox"

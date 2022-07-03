@@ -31,7 +31,7 @@ export const FlexContainer = styled.div<{ smallScreen?: boolean }>`
   width: 100%;
   max-width: 1000px;
   min-height: 280px;
-  margin: ${({ smallScreen }) => (smallScreen ? "48px" : "20px")} auto 0px;
+  margin: ${({ smallScreen }) => (smallScreen ? "48px" : "36px")} auto 0px;
 `;
 
 export const InputsContainer = styled.div<{ show: boolean }>`
@@ -42,7 +42,7 @@ export const InputsContainer = styled.div<{ show: boolean }>`
   ${({ show }) =>
     show
       ? css`
-          height: 290px;
+          height: 335px;
         `
       : css`
           height: 0;
@@ -69,7 +69,7 @@ export const InputsContainer = styled.div<{ show: boolean }>`
   }
 
   p {
-    margin: 6px 0 0;
+    margin: 0 0 6px;
 
     .fancy-a {
       text-decoration: none;

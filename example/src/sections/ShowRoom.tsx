@@ -33,6 +33,7 @@ export const ShowRoom = () => {
     useState("I'm not a robot");
   const [captchaTopicsValue, setCaptchaTopicsValue] = useState([""]);
   const [verifyTextValue, setVerifyTextValue] = useState("verify");
+  const [allowRetryValue, setAlowRetryValue] = useState(true);
 
   const handleSimulateSlowChange = (value: string) =>
     setSimulateSlowValue(Number(value));
@@ -53,6 +54,8 @@ export const ShowRoom = () => {
     setCaptchaTopicsValue([value]);
 
   const handleVerifyTextChange = (value: string) => setVerifyTextValue(value);
+
+  const handleAllowRetry = (value: boolean) => setAlowRetryValue(value);
 
   const handleResetFields = () => {
     setSimulateSlowValue(0);
@@ -97,6 +100,7 @@ export const ShowRoom = () => {
             {verifyTextValue === "verify"
               ? ""
               : `\n  verifyText={${verifyTextValue}}`}
+            {!allowRetryValue ? "" : `\n  allowRetry`}
             {!uncloseableValue ? "" : `\n  uncloseable`}
             {`\n/>`}
           </CodeBlock>
@@ -106,6 +110,7 @@ export const ShowRoom = () => {
       <FlexContainer smallScreen={smallScreen}>
         {showFaCaptcha ? (
           <FaCaptcha
+            allowRetry={allowRetryValue}
             onVerificationComplete={() => {}}
             imgTopicUrls={imagesArr2}
             captchaTopics={
@@ -147,6 +152,20 @@ export const ShowRoom = () => {
             </ShowCodeButton>
           </div>
           <InputsContainer show={showConfig}>
+            <p>
+              For a full list of features and API information, see the{" "}
+              <a
+                className="fancy-a"
+                href="https://github.com/dylandbl/faCAPTCHA#api"
+                rel="noreferrer"
+                title="https://github.com/dylandbl/faCAPTCHA#api"
+                target="_blank"
+              >
+                repo on Github
+                <ExternalLinkSvg />
+              </a>
+              .
+            </p>
             <div className="inputsInnerContainer">
               <input
                 className="num-input"
@@ -185,6 +204,18 @@ export const ShowRoom = () => {
                 onChange={(e) => handleMinAttemptsChange(e.target.value)}
               />
               <label htmlFor="minAttempts">Minimum number of attempts</label>
+              <br />
+
+              <input
+                type="checkbox"
+                id="allowRetry"
+                name="allowRetry"
+                checked={allowRetryValue}
+                onChange={(e) => handleAllowRetry(e.target.checked)}
+              />
+              <label htmlFor="uncloseable">
+                Allow retries after verification
+              </label>
               <br />
 
               <input
@@ -240,21 +271,6 @@ export const ShowRoom = () => {
                 onChange={(e) => handleVerifyTextChange(e.target.value)}
               />
               <br />
-
-              <p>
-                For a full list of features and API information, see the{" "}
-                <a
-                  className="fancy-a"
-                  href="https://github.com/dylandbl/faCAPTCHA#api"
-                  rel="noreferrer"
-                  title="https://github.com/dylandbl/faCAPTCHA#api"
-                  target="_blank"
-                >
-                  repo on Github
-                  <ExternalLinkSvg />
-                </a>
-                .
-              </p>
             </div>
           </InputsContainer>
         </div>
