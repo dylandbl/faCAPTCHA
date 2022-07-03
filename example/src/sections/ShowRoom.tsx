@@ -70,6 +70,7 @@ export const ShowRoom = () => {
     }, 10);
   };
 
+  // This is the limit of what looks good with the original style.
   const smallScreen = useWindowSize() <= 664;
 
   return (
