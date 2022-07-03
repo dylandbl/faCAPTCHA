@@ -24,7 +24,6 @@ export const CheckboxDiv = styled.div`
   input {
     height: 24px;
     width: 24px;
-    cursor: pointer;
     margin-right: 10px;
   }
 `;
