@@ -29,6 +29,9 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setCaptchaPassed,
     setShowCaptcha,
     minAttempts = 1,
+    maxAttempts = 8,
+    onMaxAttempts,
+    setDisabled,
     captchaTopics,
     imgTopicUrls,
     helpText,
@@ -146,8 +149,22 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     if (!isLoading) {
       if (onClickVerify) onClickVerify();
 
+      // If user has met the max number of attempts...
+      if (currentAttempt >= maxAttempts) {
+        if (onMaxAttempts) onMaxAttempts();
+
+        setCaptchaPassed(false);
+        setShowCaptcha(false);
+        // Lock the verification component.
+        setDisabled(true);
+      }
+
       // If no attempts remaining and verification successful...
-      if (currentAttempt >= minAttempts && verify()) {
+      if (
+        currentAttempt >= minAttempts &&
+        currentAttempt <= maxAttempts &&
+        verify()
+      ) {
         setIsLoading(true);
         setTimeout(() => {
           setCaptchaPassed(true);
