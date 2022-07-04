@@ -63,13 +63,13 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
           <CheckboxInput
             onClick={handleClick}
             type="checkbox"
-            id="facaptcha-checkbox"
-            name="facaptcha-checkbox"
+            id="captcha-checkbox"
+            name="facaptcha-Checkbox"
             checked={checked}
             onChange={() => {}}
             disabled={isDisabled}
           />
-          <label htmlFor="facaptcha-checkbox">{notARobotText}</label>
+          <label htmlFor="">{notARobotText}</label>
         </CheckboxDiv>
         <Label>{poweredByText}</Label>
       </CaptchaButton>
