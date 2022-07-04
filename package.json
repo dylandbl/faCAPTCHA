@@ -1,7 +1,7 @@
 {
-  "name": "typescript-react-test",
+  "name": "facaptcha",
   "version": "1.0.0",
-  "description": "Learning how to create React modules using TypeScript!",
+  "description": "React CAPTCHA, but it's fun",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
@@ -28,5 +28,22 @@
   },
   "files": [
     "/lib"
+  ],
+  "author": "Dylan Blair <dylandbl.dev@gmail.com>",
+  "homepage": "https://dylandbl.github.io/faCAPTCHA",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylandbl/faCAPTCHA"
+  },
+  "bugs": {
+    "url": "https://github.com/dylandbl/faCAPTCHA/issues"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "captcha",
+    "react-captcha",
+    "scambaiting",
+    "scam-baiting"
   ]
 }
