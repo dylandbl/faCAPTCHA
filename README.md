@@ -4,7 +4,7 @@
 
 <img src="https://user-images.githubusercontent.com/48745406/176952369-fa0f699b-a5f9-4ecc-8ebb-ef49a44ee4a1.png" alt="Screenshot of faCAPTCHA" align="left"> 
 
-<br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
   
 [**fey**-**kap**-ch*uh*]
 
@@ -20,19 +20,22 @@ A functional, configurable, frontend CAPTCHA for React, with features available 
 | --- | --------------------------------- | --------------------------------- | ---------------- | ------------- |
 |     | `allowRetry`                      | `boolean`                         | `false`          | Allows the user to retry the CAPTCHA after verification is complete. |
 |     | [`captchaTopics`](#captchatopics) | `string[]`                        | [See here](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) | Topics displayed at the top of the CAPTCHA. Does not work with `headerText`. |
-|     | `cellsWide`                       | `number`                          | `4`              | Number of cells in each row.                                                                |
+|     | `cellsWide`                       | `number`                          | `4`              | Number of cells in each row. |
 |     | `cellsTall`                       | `number`                          | `cellsWide`      | Number of cells in each column. |
+|     | `disabled`                        | 'boolean'                         | `false`          | Disables the CAPTCHA, preventing users from attempting verification. `disabled` is `true` if the user exceeds `maxAttempts`. |
 | ⚠️  | [`imgTopicUrls`](#imgtopicurls)   | [`ImgTopicType[]`](#imgtopictype) | -                | Array of image URLs with associated topic tags. |
 |     | `headerText`                      | `string`                          | [See here](#headertext-default-value) | Used in place of the CAPTCHA header text. Overrides `captchaTopic`. |
 |     | `helpText`                        | `string`                          | [See here](#helptext-default-value) | Used in place of the default help text, shown when the '?' icon is clicked. |
-|     | `minAttempts`                     | `number`                          | `1`                                                                                        | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
-|     | `notARobotText`                   | `string`                          | `"I'm not a robot"` | Used in place of the "I'm not a robot" text.                                                |
-|     | `onClickCheckbox`                 | `() => void`                      | -                                                                                          | Called on clicking the checkbox. Does not execute if the CAPTCHA popup is open.             |
-|     | `onClickVerify`                   | `() => void`                      | -                                                                                          | Called on clicking the 'Verify' button.                                                     |
-|     | `onRefresh`                       | `() => void`                      | -                                                                                          | Called on clicking the refresh icon.                                                        |
+|     | `maxAttempts`                     | `number`                          | `8`              | Maximum number of attempts. If exceeded, `disabled` is set to `true` and `onMaxAttempts` is called. |
+|     | `minAttempts`                     | `number`                          | `1`              | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
+|     | `notARobotText`                   | `string`                          | `"I'm not a robot"` | Used in place of the "I'm not a robot" text. |
+|     | `onClickCheckbox`                 | `() => void`                      | -                | Called on clicking the checkbox. Does not execute if the CAPTCHA popup is open. |
+|     | `onClickVerify`                   | `() => void`                      | -                | Called on clicking the 'Verify' button. |
+|     | `onMaxAttempts`                   | `() => void`                      | -                | Called when `maxAttempts` is exceeded. |
+|     | `onRefresh`                       | `() => void`                      | -                | Called on clicking the refresh icon. |
 | ⚠️  | `onVerificationComplete`          | `() => void`                      | -                | Called on successful verification completion. |
 |     | [`simulateSlow`](#simulateslow)   | `0 - 3`                           | `1`              | Simulates a slow internet connection speed. |
-|     | `uncloseable`                     | `boolean`                          | `false`          | Prevents the CAPTCHA from being closed until verification is complete. |
+|     | `uncloseable`                     | `boolean`                         | `false`          | Prevents the CAPTCHA from being closed until verification is complete. |
 |     | `verifyText`                      | `string`                          | `"verify"`       | Text for the 'Verify' button. |
 
 ### `captchaTopics`
