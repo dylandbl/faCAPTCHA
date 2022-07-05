@@ -4,15 +4,24 @@
 
 <img src="https://user-images.githubusercontent.com/48745406/176952369-fa0f699b-a5f9-4ecc-8ebb-ef49a44ee4a1.png" alt="Screenshot of faCAPTCHA" align="left"> 
 
-<br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br />
   
 [**fey**-**kap**-ch*uh*]
 
-A functional, configurable, frontend CAPTCHA for React, with features available to create an anti-UX design. The name is a portmanteau of 'fake' and 'CAPTCHA', but through development, it became a real and functional CAPTCHA. Just be sure to change the [`helpText`](#helptext-default-value). faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
+A functional, configurable, frontend CAPTCHA for React. The name is a portmanteau of 'fake' and 'CAPTCHA', and was initially an exploration in bad UX, but through development, it became a real and functional CAPTCHA. Just be sure to change the [`helpText`](#helptext-default-value). faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
+
+## Installation
+```sh
+yarn add facaptcha
+```
+or
+```sh
+npm install facaptcha
+```
 
 <br clear="both" />
 
-## API
+# API
 
 '⚠️' denotes required props.
 
@@ -35,15 +44,15 @@ A functional, configurable, frontend CAPTCHA for React, with features available 
 |     | `uncloseable`                     | `boolean`                          | `false`          | Prevents the CAPTCHA from being closed until verification is complete. |
 |     | `verifyText`                      | `string`                          | `"verify"`       | Text for the 'Verify' button. |
 
-### `captchaTopics`
+## `captchaTopics`
 
 An array of case-sensitive topics, from which one item will be randomly selected. The topic appears in the header of the CAPTCHA and it is the phrase or word that the image tags will be compared to. If not defined, a pseudorandomly selected [default value](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) will be used.
 
-### `imgTopicUrls`
+## `imgTopicUrls`
 
 Topic tags are case-sensitive and compared to the topic selected from `captchaTopics`. The images will be displayed in order. If there are fewer images than cells, the images will repeat.
 
-#### `ImgTopicType`
+### `ImgTopicType`
 
 ```TS
 type ImgTopicType = {
@@ -52,7 +61,7 @@ type ImgTopicType = {
 }
 ```
 
-#### Exmaple
+### Example
 
 ```TS
 const ExampleImages: ImgTopicType[] = [
@@ -67,15 +76,15 @@ const ExampleImages: ImgTopicType[] = [
 ]
 ```
 
-### `headerText` default value
+## `headerText` default value
 
 > Select all squares with <br> > `${captchaTopic}` <br>
 > If there are none, click `${verifyText}` <br>
 
-### `helpText` default value
+## `helpText` default value
 
 > Click on the images that correspond with the given prompt. Once you've selected all applicable images, click '`${verifyText}`'. If you make multiple wrong attempts in a row, you will be barred from accessing the site. The number of wrong attempts permitted depends on your browsing behaviour. If you complete an entire row, column, or diagonal, you have a bingo. Shout 'bingo' into your microphone to access the site.
 
-### `simulateSlow`
+## `simulateSlow`
 
 Simulates a slow connection speed. A value of `0` will not create artificial load times. A value of `1` or greater will render load screens between CAPTCHA attempts and on clicking the component's refresh icon. The load time is randomly generated based on the value given, with higher values generating higher average load times.
