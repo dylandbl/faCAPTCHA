@@ -17,7 +17,7 @@ import { useCallback } from "react";
 import { Props } from "../../types/index";
 import { OverlayDiv } from "../Overlay/OverlayStyles";
 
-const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
+const FaCAPTCHA = (props: Props.CaptchaWindow) => {
   const {
     verifyText = "verify",
     onClickVerify,
@@ -245,4 +245,4 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
   );
 };
 
-export default FakeCAPTCHA;
+export default FaCAPTCHA;
