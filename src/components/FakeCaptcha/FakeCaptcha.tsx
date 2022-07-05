@@ -17,7 +17,7 @@ import { useCallback } from "react";
 import { Props } from "../../types/index";
 import { OverlayDiv } from "../Overlay/OverlayStyles";
 
-const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
+const FaCAPTCHA = (props: Props.CaptchaWindow) => {
   const {
     verifyText = "verify",
     onClickVerify,
@@ -29,11 +29,25 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setCaptchaPassed,
     setShowCaptcha,
     minAttempts = 1,
+    maxAttempts,
+    onMaxAttempts,
+    setDisabled,
     captchaTopics,
     imgTopicUrls,
     helpText,
     uncloseable = false,
   } = props;
+  // If maxAttempts is undefined, maxAttempts can be min + 8.
+  // If maxAttempts is defined but less than minAttempts, throw error and disable the CAPTCHA.
+  let maximumAttempts = 8;
+  try {
+    if (!maxAttempts) maximumAttempts += minAttempts;
+    if (maxAttempts && maxAttempts < minAttempts)
+      throw "Error: 'maxAttempts' cannot be less than 'minAttempts'";
+  } catch (e) {
+    console.error(e);
+    setShowCaptcha(false);
+  }
   const initialTopic = captchaTopics
     ? captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
     : randomCaptchaTopic() ?? "string";
@@ -146,8 +160,22 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     if (!isLoading) {
       if (onClickVerify) onClickVerify();
 
+      // If user has met the max number of attempts...
+      if (currentAttempt >= maximumAttempts) {
+        if (onMaxAttempts) onMaxAttempts();
+
+        setCaptchaPassed(false);
+        setShowCaptcha(false);
+        // Lock the verification component.
+        setDisabled(true);
+      }
+
       // If no attempts remaining and verification successful...
-      if (currentAttempt >= minAttempts && verify()) {
+      if (
+        currentAttempt >= minAttempts &&
+        currentAttempt <= maximumAttempts &&
+        verify()
+      ) {
         setIsLoading(true);
         setTimeout(() => {
           setCaptchaPassed(true);
@@ -217,4 +245,4 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
   );
 };
 
-export default FakeCAPTCHA;
+export default FaCAPTCHA;

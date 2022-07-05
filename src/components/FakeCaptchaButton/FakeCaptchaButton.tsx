@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { CaptchaButton, CheckboxDiv, Label } from "./FakeCaptchaButtonStyles";
+import {
+  CaptchaButton,
+  CheckboxDiv,
+  CheckboxInput,
+  Label,
+} from "./FakeCaptchaButtonStyles";
 import FakeCAPTCHA from "../FakeCaptcha/FakeCaptcha";
 import { useEffect } from "react";
 import { Props } from "../../types/index";
 
-export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
+export const FaCaptchaButton = (props: Props.CaptchaButton) => {
   const {
     allowRetry = false,
     notARobotText = "I'm not a robot",
@@ -12,19 +17,23 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
     onVerificationComplete,
     verifyText,
     minAttempts,
+    maxAttempts,
     cellsWide,
     cellsTall,
     imgTopicUrls,
     onClickCheckbox,
+    onMaxAttempts,
     helpText,
     simulateSlow = 1,
     headerText,
     captchaTopics,
     uncloseable,
+    disabled = false,
   } = props;
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [checked, setChecked] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(disabled);
   const poweredByText = "Powered by faCAPTCHA";
 
   // Handle clicking the large checkbox.
@@ -51,21 +60,24 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
     <>
       <CaptchaButton>
         <CheckboxDiv>
-          <input
+          <CheckboxInput
             onClick={handleClick}
             type="checkbox"
             id="captcha-checkbox"
-            name="fake-captcha-checkbox"
+            name="facaptcha-Checkbox"
             checked={checked}
             onChange={() => {}}
+            disabled={isDisabled}
           />
-          {notARobotText}
+          <label htmlFor="">{notARobotText}</label>
         </CheckboxDiv>
         <Label>{poweredByText}</Label>
       </CaptchaButton>
-      {showCaptcha && (
+      {showCaptcha && !isDisabled && (
         <FakeCAPTCHA
           minAttempts={minAttempts}
+          maxAttempts={maxAttempts}
+          onMaxAttempts={onMaxAttempts}
           poweredByText={poweredByText}
           captchaPassed={captchaPassed}
           setCaptchaPassed={setCaptchaPassed}
@@ -80,6 +92,7 @@ export const FakeCaptchaButton = (props: Props.CaptchaButton) => {
           headerText={headerText}
           captchaTopics={captchaTopics}
           uncloseable={uncloseable}
+          setDisabled={setIsDisabled}
         />
       )}
     </>

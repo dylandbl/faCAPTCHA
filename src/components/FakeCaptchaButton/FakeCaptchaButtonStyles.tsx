@@ -20,12 +20,14 @@ export const CheckboxDiv = styled.div`
   align-items: center;
   font-weight: 500;
   font-size: 0.95rem;
+`;
 
-  input {
-    height: 24px;
-    width: 24px;
-    margin-right: 10px;
-  }
+export const CheckboxInput = styled.input`
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+
+  ${({ disabled }) => disabled && "cursor: not-allowed;"}
 `;
 
 export const Label = styled.div`
