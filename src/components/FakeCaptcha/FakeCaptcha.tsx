@@ -29,7 +29,7 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     setCaptchaPassed,
     setShowCaptcha,
     minAttempts = 1,
-    maxAttempts = 8,
+    maxAttempts,
     onMaxAttempts,
     setDisabled,
     captchaTopics,
@@ -37,6 +37,17 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
     helpText,
     uncloseable = false,
   } = props;
+  // If maxAttempts is undefined, maxAttempts can be min + 8.
+  // If maxAttempts is defined but less than minAttempts, throw error and disable the CAPTCHA.
+  let maximumAttempts = 8;
+  try {
+    if (!maxAttempts) maximumAttempts += minAttempts;
+    if (maxAttempts && maxAttempts < minAttempts)
+      throw "Error: 'maxAttempts' cannot be less than 'minAttempts'";
+  } catch (e) {
+    console.error(e);
+    setShowCaptcha(false);
+  }
   const initialTopic = captchaTopics
     ? captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
     : randomCaptchaTopic() ?? "string";
@@ -150,7 +161,7 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
       if (onClickVerify) onClickVerify();
 
       // If user has met the max number of attempts...
-      if (currentAttempt >= maxAttempts) {
+      if (currentAttempt >= maximumAttempts) {
         if (onMaxAttempts) onMaxAttempts();
 
         setCaptchaPassed(false);
@@ -162,7 +173,7 @@ const FakeCAPTCHA = (props: Props.CaptchaWindow) => {
       // If no attempts remaining and verification successful...
       if (
         currentAttempt >= minAttempts &&
-        currentAttempt <= maxAttempts &&
+        currentAttempt <= maximumAttempts &&
         verify()
       ) {
         setIsLoading(true);
