@@ -4,9 +4,9 @@ import {
   TitleDiv,
 } from "../styles/HeaderStyles";
 import { GitHubLogoSvg } from "./GitHubLogoSvg";
-import { UserIcon } from "./UserIcon";
+import { NpmLogoSvg } from "./npmLogoSvg";
 
-export const Header = ({ screenWidth }: { screenWidth: number }) => {
+export const Header = () => {
   return (
     <HeaderDiv>
       <TitleDiv>faCAPTCHA</TitleDiv>
@@ -16,10 +16,10 @@ export const Header = ({ screenWidth }: { screenWidth: number }) => {
           href="https://github.com/dylandbl/faCAPTCHA/"
           title="View the repo on GitHub"
         >
-          <GitHubLogoSvg widthHeight={26} />
+          <GitHubLogoSvg />
         </a>
-        <a href="https://github.com/dylandbl" title="Visit dylandbl on GitHub">
-          <UserIcon />
+        <a href="https://www.npmjs.com/package/facaptcha" title="View on npm">
+          <NpmLogoSvg />
         </a>
       </RightSideContainer>
     </HeaderDiv>
