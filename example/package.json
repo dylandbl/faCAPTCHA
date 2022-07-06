@@ -1,7 +1,7 @@
 {
   "name": "example",
   "homepage": "https://dylandbl.github.io/faCAPTCHA/",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.9.3",
