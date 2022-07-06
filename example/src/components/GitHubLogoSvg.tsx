@@ -1,12 +1,13 @@
 import { SVG } from "../styles/SVG";
 
-export const GitHubLogoSvg = ({ widthHeight }: { widthHeight: number }) => {
+export const GitHubLogoSvg = () => {
   return (
     <SVG
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
-      width={widthHeight}
-      height={widthHeight}
+      width={26}
+      height={26}
+      hoverColor="#bebfc1"
     >
       <path
         fillRule="evenodd"
