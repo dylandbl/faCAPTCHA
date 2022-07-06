@@ -43,6 +43,7 @@ export const RightSideContainer = styled.div`
   display: flex;
   width: 131px;
   justify-content: center;
+  align-items: baseline;
 
   a:nth-of-type(2) {
     margin-left: 12px;
