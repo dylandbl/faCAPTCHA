@@ -35,7 +35,7 @@ npm install facaptcha
 | ⚠️  | [`imgTopicUrls`](#imgtopicurls)   | [`ImgTopicType[]`](#imgtopictype) | -                | Array of image URLs with associated topic tags. |
 |     | `headerText`                      | `string`                          | [See here](#headertext-default-value) | Used in place of the CAPTCHA header text. Overrides `captchaTopic`. |
 |     | `helpText`                        | `string`                          | [See here](#helptext-default-value) | Used in place of the default help text, shown when the '?' icon is clicked. |
-|     | `maxAttempts`                     | `number`                          | `8`              | Maximum number of attempts. If exceeded, `disabled` is set to `true` and `onMaxAttempts` is called. |
+|     | `maxAttempts`                     | `number`                          | `minAttempts + 7` | Maximum number of attempts. If exceeded, `disabled` is set to `true` and `onMaxAttempts` is called. |
 |     | `minAttempts`                     | `number`                          | `1`              | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
 |     | `notARobotText`                   | `string`                          | `"I'm not a robot"` | Used in place of the "I'm not a robot" text. |
 |     | `onClickCheckbox`                 | `() => void`                      | -                | Called on clicking the checkbox. Does not execute if the CAPTCHA popup is open. |
