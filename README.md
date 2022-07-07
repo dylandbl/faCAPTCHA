@@ -81,7 +81,8 @@ const ExampleImages: ImgTopicType[] = [
 
 ## `headerText` default value
 
-> Select all squares with <br> > `${captchaTopic}` <br>
+> Select all squares with <br> 
+> `${captchaTopic}` <br>
 > If there are none, click `${verifyText}` <br>
 
 ## `helpText` default value
