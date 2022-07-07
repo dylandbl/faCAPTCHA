@@ -5,6 +5,7 @@ export const ShowRoomContainer = styled.div`
   .codeBlockContainer {
     margin: 112px auto 0;
     width: 444px;
+    height: 241px;
   }
 `;
 
