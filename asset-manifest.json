@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/faCAPTCHA/static/css/main.e5cda47e.css",
-    "main.js": "/faCAPTCHA/static/js/main.dcfd11fb.js",
+    "main.js": "/faCAPTCHA/static/js/main.16fa528a.js",
     "index.html": "/faCAPTCHA/index.html",
     "main.e5cda47e.css.map": "/faCAPTCHA/static/css/main.e5cda47e.css.map",
-    "main.dcfd11fb.js.map": "/faCAPTCHA/static/js/main.dcfd11fb.js.map"
+    "main.16fa528a.js.map": "/faCAPTCHA/static/js/main.16fa528a.js.map"
   },
   "entrypoints": [
     "static/css/main.e5cda47e.css",
-    "static/js/main.dcfd11fb.js"
+    "static/js/main.16fa528a.js"
   ]
 }
