@@ -29,6 +29,7 @@ export const ShowRoom = () => {
   const [simulateSlowValue, setSimulateSlowValue] = useState(0);
   const [cellsWideValue, setCellsWideValue] = useState(3);
   const [minAttemptsValue, setMinAttemptsValue] = useState(1);
+  const [maxAttemptsValue, setMaxAttemptsValue] = useState(8); // minAttempts default + 1.
   const [uncloseableValue, setUncloseableValue] = useState(false);
   const [notARobotTextValue, setNotARobotTextValue] =
     useState("I'm not a robot");
@@ -46,8 +47,9 @@ export const ShowRoom = () => {
   const handleCellWideChange = (value: string) =>
     setCellsWideValue(Number(value));
 
-  const handleMinAttemptsChange = (value: string) =>
-    setMinAttemptsValue(Number(value));
+  const handleMinAttemptsChange = (value: number) => setMinAttemptsValue(value);
+
+  const handleMaxAttemptsChange = (value: number) => setMaxAttemptsValue(value);
 
   const handleUncloseableChange = (value: boolean) =>
     setUncloseableValue(value);
@@ -100,6 +102,9 @@ export const ShowRoom = () => {
             {minAttemptsValue === 1
               ? ""
               : `\n  minAttempts={${minAttemptsValue}}`}
+            {maxAttemptsValue === minAttemptsValue + 7
+              ? ""
+              : `\n  maxAttempts={${maxAttemptsValue}}`}
             {notARobotTextValue === "I'm not a robot"
               ? ""
               : `\n  notARobotText="${notARobotTextValue}"`}
@@ -130,6 +135,7 @@ export const ShowRoom = () => {
             // @ts-ignore // 'number' is not assignable to '0 | 1 | 2 | 3'.
             simulateSlow={simulateSlowValue}
             minAttempts={minAttemptsValue}
+            maxAttempts={maxAttemptsValue}
             uncloseable={uncloseableValue}
             notARobotText={notARobotTextValue}
             verifyText={verifyTextValue}
@@ -226,9 +232,26 @@ export const ShowRoom = () => {
                 value={minAttemptsValue}
                 min={1}
                 max={40}
-                onChange={(e) => handleMinAttemptsChange(e.target.value)}
+                onChange={(e) =>
+                  handleMinAttemptsChange(Number(e.target.value))
+                }
               />
               <label htmlFor="minAttempts">Minimum attempts</label>
+              <br />
+
+              <input
+                className="num-input"
+                type="number"
+                id="maxAttempts"
+                name="maxAttempts"
+                value={maxAttemptsValue}
+                min={minAttemptsValue}
+                max={40}
+                onChange={(e) =>
+                  handleMaxAttemptsChange(Number(e.target.value))
+                }
+              />
+              <label htmlFor="minAttempts">Maximum attempts</label>
               <br />
 
               <input
