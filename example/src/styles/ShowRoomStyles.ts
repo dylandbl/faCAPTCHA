@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 
 export const ShowRoomContainer = styled.div`
   .codeBlockContainer {
-    height: 217px;
     margin: 112px auto 0;
     width: 444px;
   }
@@ -31,18 +30,18 @@ export const FlexContainer = styled.div<{ smallScreen?: boolean }>`
   width: 100%;
   max-width: 1000px;
   min-height: 280px;
-  margin: ${({ smallScreen }) => (smallScreen ? "48px" : "36px")} auto 0px;
+  margin: ${({ smallScreen }) => (smallScreen ? "48px" : "16px")} auto 0px;
 `;
 
 export const InputsContainer = styled.div<{ show: boolean }>`
   background: white;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   width: 100%;
   ${({ show }) =>
     show
       ? css`
-          height: 385px;
+          height: 410px;
         `
       : css`
           height: 0;
@@ -61,7 +60,7 @@ export const InputsContainer = styled.div<{ show: boolean }>`
 
   .inputsInnerContainer {
     width: 275px;
-    padding: 6px 12px;
+    padding: 6px 0 0 12px;
   }
 
   .dropdownLabel {
