@@ -37,9 +37,9 @@ const FaCAPTCHA = (props: Props.CaptchaWindow) => {
     helpText,
     uncloseable = false,
   } = props;
-  // If maxAttempts is undefined, maxAttempts can be min + 8.
+  // If maxAttempts is undefined, maxAttempts can be min + 7.
   // If maxAttempts is defined but less than minAttempts, throw error and disable the CAPTCHA.
-  let maximumAttempts = 8;
+  let maximumAttempts = 7;
   try {
     if (!maxAttempts) maximumAttempts += minAttempts;
     if (maxAttempts && maxAttempts < minAttempts)
