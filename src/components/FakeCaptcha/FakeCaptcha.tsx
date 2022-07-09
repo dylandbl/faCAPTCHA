@@ -94,18 +94,18 @@ const FaCAPTCHA = (props: Props.CaptchaWindow) => {
           <ImageButton
             key={`${x}-${y}`}
             imageKey={`${x}-${y}`}
-            url={imgTopicUrls[index].url}
-            topics={imgTopicUrls[index].topics}
+            url={imgTopicUrls[index]?.url}
+            topics={imgTopicUrls[index]?.topics}
             handleSelection={handleImageSelection}
           />
         );
 
         // Later, on verification, we can compare selected image keys to keys in this array.
-        if (imgTopicUrls[index].topics.includes(captchaTopic))
+        if (imgTopicUrls[index]?.topics?.includes(captchaTopic))
           correctSelectionKeys.push(`${x}-${y}`);
 
         // Handle indexing depending on array size.
-        if (index >= imgTopicUrls.length - 1) index = 0;
+        if (index >= imgTopicUrls?.length - 1) index = 0;
         else index++;
       }
     }
