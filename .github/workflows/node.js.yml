@@ -26,6 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: yarn ci
+    - run: rm -rf node_modules && yarn install --frozen-lockfile
+    # Equivalent to `npm ci`.
+    # Sometimes, `yarn install --frozen-lockfile` is not enough. Delete node_modules to be certain it should work.
     - run: npm run build --if-present
     - run: npm test
