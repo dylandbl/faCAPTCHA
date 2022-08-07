@@ -30,4 +30,4 @@ jobs:
     # Equivalent to `npm ci`.
     # Sometimes, `yarn install --frozen-lockfile` is not enough. Delete node_modules to be certain it should work.
     - run: npm run build --if-present
-    - run: npm test
+    - run: yarn test
