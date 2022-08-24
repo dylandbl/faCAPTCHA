@@ -34,7 +34,7 @@ export const FaCaptchaButton = (props: Props.CaptchaButton) => {
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [checked, setChecked] = useState(false);
   const [isDisabled, setIsDisabled] = useState(disabled);
-  const poweredByText = "Powered by faCAPTCHA";
+  const poweredByText = "Protected by faCAPTCHA";
 
   // Handle clicking the large checkbox.
   const handleClick = () => {
