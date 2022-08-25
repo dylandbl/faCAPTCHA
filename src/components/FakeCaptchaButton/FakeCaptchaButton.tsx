@@ -66,7 +66,6 @@ export const FaCaptchaButton = (props: Props.CaptchaButton) => {
             id="captcha-checkbox"
             name="facaptcha-Checkbox"
             checked={checked}
-            onChange={() => {}}
             disabled={isDisabled}
           />
           <label htmlFor="">{notARobotText}</label>
