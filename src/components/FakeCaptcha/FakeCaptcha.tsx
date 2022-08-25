@@ -61,8 +61,8 @@ const FaCAPTCHA = (props: Props.CaptchaWindow) => {
       Math.random() * (simulateSlow * 3000 - simulateSlow * 2000) +
         simulateSlow * 2000
     );
-  let correctSelectionKeys: string[] = [];
-  let selectedItems: string[] = [];
+  const correctSelectionKeys: string[] = [];
+  const selectedItems: string[] = [];
 
   // Simulates initial loading time.
   useEffect(() => {
