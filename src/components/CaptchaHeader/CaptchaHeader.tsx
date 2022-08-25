@@ -1,10 +1,10 @@
-import { Props } from "../../types/index";
+import { SharedProps } from "../../types/index";
 import { CaptchaHeaderDiv } from "./CaptchaHeaderStyles";
 
 interface CaptchaHeaderProps {
-  headerText?: Props.SharedProps["headerText"];
+  headerText?: SharedProps["headerText"];
   captchaTopic: string;
-  verifyText: Props.SharedProps["verifyText"];
+  verifyText: SharedProps["verifyText"];
 }
 
 export const CaptchaHeader = (props: CaptchaHeaderProps) => {

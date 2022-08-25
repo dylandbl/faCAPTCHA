@@ -11,7 +11,8 @@
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "eslint": "eslint src/**"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -22,6 +23,7 @@
     "@emotion/styled": "^11.10.0"
   },
   "devDependencies": {
+    "@emotion/eslint-plugin": "^11.10.0",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
@@ -29,7 +31,7 @@
     "eslint": "^8.22.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
-    "react-hooks": "^1.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "typescript": "^4.7.4"
   },
   "externals": {

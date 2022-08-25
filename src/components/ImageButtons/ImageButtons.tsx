@@ -5,11 +5,11 @@ import {
   ClickableImageContainer,
 } from "./ImageButtonStyles";
 import { CheckmarkSvg } from "../SvgComponent/SvgComponent";
-import { Props } from "../../types/index";
+import { ImgTopicType } from "../../types/index";
 
 interface ImageButtonProps {
-  url: Props.ImgTopicType["url"];
-  topics: Props.ImgTopicType["topics"];
+  url: ImgTopicType["url"];
+  topics: ImgTopicType["topics"];
   handleSelection: (key: string) => void;
   imageKey: string;
 }

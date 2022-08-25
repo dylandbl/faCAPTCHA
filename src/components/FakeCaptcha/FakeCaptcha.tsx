@@ -14,10 +14,10 @@ import { randomCaptchaTopic } from "../../utils/index";
 import { RefreshSvg } from "../SvgComponent/SvgComponent";
 import { Label } from "../FakeCaptchaButton/FakeCaptchaButtonStyles";
 import { useCallback } from "react";
-import { Props } from "../../types/index";
+import { CaptchaWindowProps } from "../../types/index";
 import { OverlayDiv } from "../Overlay/OverlayStyles";
 
-const FaCAPTCHA = (props: Props.CaptchaWindow) => {
+const FaCAPTCHA = (props: CaptchaWindowProps) => {
   const {
     verifyText = "verify",
     onClickVerify,
@@ -61,8 +61,8 @@ const FaCAPTCHA = (props: Props.CaptchaWindow) => {
       Math.random() * (simulateSlow * 3000 - simulateSlow * 2000) +
         simulateSlow * 2000
     );
-  let correctSelectionKeys: string[] = [];
-  let selectedItems: string[] = [];
+  const correctSelectionKeys: string[] = [];
+  const selectedItems: string[] = [];
 
   // Simulates initial loading time.
   useEffect(() => {
