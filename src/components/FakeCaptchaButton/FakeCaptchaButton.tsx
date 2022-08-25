@@ -7,9 +7,9 @@ import {
 } from "./FakeCaptchaButtonStyles";
 import FakeCAPTCHA from "../FakeCaptcha/FakeCaptcha";
 import { useEffect } from "react";
-import { Props } from "../../types/index";
+import { CaptchaButtonProps } from "../../types/index";
 
-export const FaCaptchaButton = (props: Props.CaptchaButton) => {
+export const FaCaptchaButton = (props: CaptchaButtonProps) => {
   const {
     allowRetry = false,
     notARobotText = "I'm not a robot",
