@@ -26,7 +26,7 @@
     "@emotion/eslint-plugin": "^11.10.0",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.34.0",
     "eslint": "^8.22.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
