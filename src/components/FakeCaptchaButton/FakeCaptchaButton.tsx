@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
-  CaptchaButton,
+  CaptchaContainer,
   CheckboxDiv,
   CheckboxInput,
   PoweredBy,
@@ -57,7 +57,7 @@ export const FaCaptchaButton = (props: CaptchaButtonProps) => {
 
   return (
     <>
-      <CaptchaButton type='button'>
+      <CaptchaContainer>
         <CheckboxDiv>
           <CheckboxInput
             onClick={handleClick}
@@ -67,10 +67,10 @@ export const FaCaptchaButton = (props: CaptchaButtonProps) => {
             checked={checked}
             disabled={isDisabled}
           />
-          <div>{notARobotText}</div>
+          <label htmlFor='captcha-checkbox'>{notARobotText}</label>
         </CheckboxDiv>
         <PoweredBy>{poweredByText}</PoweredBy>
-      </CaptchaButton>
+      </CaptchaContainer>
       {showCaptcha && !isDisabled && (
         <FakeCAPTCHA
           minAttempts={minAttempts}

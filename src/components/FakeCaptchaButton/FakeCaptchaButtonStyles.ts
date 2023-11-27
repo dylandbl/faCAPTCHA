@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const CaptchaButton = styled.button`
+export const CaptchaContainer = styled.div`
   min-width: 275px;
   max-width: 275px;
   height: 52px;
