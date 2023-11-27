@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import {
   CaptchaButton,
   CheckboxDiv,
   CheckboxInput,
-  Label,
-} from "./FakeCaptchaButtonStyles";
-import FakeCAPTCHA from "../FakeCaptcha/FakeCaptcha";
-import { useEffect } from "react";
-import { CaptchaButtonProps } from "../../types/index";
+  PoweredBy,
+} from './FakeCaptchaButtonStyles';
+import FakeCAPTCHA from '../FakeCaptcha/FakeCaptcha';
+import { CaptchaButtonProps } from '../../types/index';
 
 export const FaCaptchaButton = (props: CaptchaButtonProps) => {
   const {
@@ -34,7 +33,7 @@ export const FaCaptchaButton = (props: CaptchaButtonProps) => {
   const [captchaPassed, setCaptchaPassed] = useState(false);
   const [checked, setChecked] = useState(false);
   const [isDisabled, setIsDisabled] = useState(disabled);
-  const poweredByText = "Powered by faCAPTCHA";
+  const poweredByText = 'Powered by faCAPTCHA';
 
   // Handle clicking the large checkbox.
   const handleClick = () => {
@@ -62,15 +61,15 @@ export const FaCaptchaButton = (props: CaptchaButtonProps) => {
         <CheckboxDiv>
           <CheckboxInput
             onClick={handleClick}
-            type="checkbox"
-            id="captcha-checkbox"
-            name="facaptcha-Checkbox"
+            type='checkbox'
+            id='captcha-checkbox'
+            name='facaptcha-Checkbox'
             checked={checked}
             disabled={isDisabled}
           />
-          <label htmlFor="">{notARobotText}</label>
+          <div>{notARobotText}</div>
         </CheckboxDiv>
-        <Label>{poweredByText}</Label>
+        <PoweredBy>{poweredByText}</PoweredBy>
       </CaptchaButton>
       {showCaptcha && !isDisabled && (
         <FakeCAPTCHA

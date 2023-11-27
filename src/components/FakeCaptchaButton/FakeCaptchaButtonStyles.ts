@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-export const CaptchaButton = styled.div`
+export const CaptchaButton = styled.button`
   min-width: 275px;
   max-width: 275px;
   height: 52px;
@@ -27,10 +27,10 @@ export const CheckboxInput = styled.input`
   width: 24px;
   margin-right: 10px;
 
-  ${({ disabled }) => disabled && "cursor: not-allowed;"}
+  ${({ disabled }) => disabled && 'cursor: not-allowed;'}
 `;
 
-export const Label = styled.div`
+export const PoweredBy = styled.div`
   font-size: 0.7rem;
   color: grey;
   width: 60px;
