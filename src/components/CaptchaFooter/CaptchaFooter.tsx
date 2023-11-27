@@ -1,5 +1,6 @@
-import { FooterContainer } from "./CaptchaFooterStyles";
-import { InfoSvg, RefreshSvg } from "../SvgComponent/SvgComponent";
+import { FooterButtonsContainer, FooterContainer } from './CaptchaFooterStyles';
+import { InfoSvg, RefreshSvg } from '../SvgComponent/SvgComponent';
+import { SvgButton } from '../SvgButton/SvgButton';
 
 interface CaptchaFooterProps {
   children: JSX.Element;
@@ -11,10 +12,14 @@ export const CaptchaFooter = (props: CaptchaFooterProps) => {
 
   return (
     <FooterContainer>
-      <div>
-        <RefreshSvg size={24} onClick={onRefresh} />
-        <InfoSvg size={24} onClick={onInfo} />
-      </div>
+      <FooterButtonsContainer>
+        <SvgButton onClick={onRefresh}>
+          <RefreshSvg size={24} />
+        </SvgButton>
+        <SvgButton onClick={onInfo}>
+          <InfoSvg size={24} />
+        </SvgButton>
+      </FooterButtonsContainer>
       {children}
     </FooterContainer>
   );
