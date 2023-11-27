@@ -230,7 +230,10 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
             onRefresh={handleRefresh}
             onInfo={handleInfo}
           >
-            <VerifyButton onClick={(e) => handleVerify(e)}>
+            <VerifyButton
+              onClick={(e) => handleVerify(e)}
+              type='button'
+            >
               {verifyText.toUpperCase()}
             </VerifyButton>
           </CaptchaFooter>

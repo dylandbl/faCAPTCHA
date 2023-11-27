@@ -1,15 +1,15 @@
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useState } from 'react';
 import {
   CheckmarkContainer,
   ClickableImage,
   ClickableImageContainer,
-} from "./ImageButtonStyles";
-import { CheckmarkSvg } from "../SvgComponent/SvgComponent";
-import { ImgTopicType } from "../../types/index";
+} from './ImageButtonStyles';
+import { CheckmarkSvg } from '../SvgComponent/SvgComponent';
+import { ImgTopicType } from '../../types/index';
 
 interface ImageButtonProps {
-  url: ImgTopicType["url"];
-  topics: ImgTopicType["topics"];
+  url: ImgTopicType['url'];
+  topics: ImgTopicType['topics'];
   handleSelection: (key: string) => void;
   imageKey: string;
 }
@@ -29,6 +29,7 @@ export const ImageButton = (props: ImageButtonProps) => {
         isClicked={isSelected}
         onClick={(e) => handleClick(e)}
         imgUrl={url}
+        type='button'
       />
       <CheckmarkContainer>{isSelected && <CheckmarkSvg />}</CheckmarkContainer>
     </ClickableImageContainer>

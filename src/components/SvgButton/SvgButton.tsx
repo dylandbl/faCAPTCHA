@@ -7,5 +7,12 @@ interface SvgButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const SvgButton = (props: SvgButtonProps) => {
   const { children, ...rest } = props;
-  return <StyledButton {...rest}>{children}</StyledButton>;
+  return (
+    <StyledButton
+      type='button'
+      {...rest}
+    >
+      {children}
+    </StyledButton>
+  );
 };

@@ -57,7 +57,7 @@ export const FaCaptchaButton = (props: CaptchaButtonProps) => {
 
   return (
     <>
-      <CaptchaButton>
+      <CaptchaButton type='button'>
         <CheckboxDiv>
           <CheckboxInput
             onClick={handleClick}
