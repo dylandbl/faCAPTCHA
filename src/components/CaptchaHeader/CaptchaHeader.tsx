@@ -1,10 +1,10 @@
-import { SharedProps } from "../../types/index";
-import { CaptchaHeaderDiv } from "./CaptchaHeaderStyles";
+import { SharedProps } from '../../types/index';
+import { CaptchaHeaderDiv, TopicText, TopicTitle } from './CaptchaHeaderStyles';
 
 interface CaptchaHeaderProps {
-  headerText?: SharedProps["headerText"];
+  headerText?: SharedProps['headerText'];
   captchaTopic: string;
-  verifyText: SharedProps["verifyText"];
+  verifyText: SharedProps['verifyText'];
 }
 
 export const CaptchaHeader = (props: CaptchaHeaderProps) => {
@@ -13,12 +13,12 @@ export const CaptchaHeader = (props: CaptchaHeaderProps) => {
   return (
     <CaptchaHeaderDiv centerTextVertically={Boolean(headerText)}>
       {headerText ? (
-        <p>{headerText}</p>
+        <TopicText>{headerText}</TopicText>
       ) : (
         <>
-          <p>Select all squares with</p>
-          <h4>{captchaTopic}</h4>
-          <p>If there are none, click {verifyText}</p>
+          <TopicText>Select all squares with</TopicText>
+          <TopicTitle>{captchaTopic}</TopicTitle>
+          <TopicText>If there are none, click {verifyText}</TopicText>
         </>
       )}
     </CaptchaHeaderDiv>
