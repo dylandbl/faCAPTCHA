@@ -43,7 +43,7 @@ export const VerifyButton = styled.button`
   border: none;
   color: white;
   font-weight: bold;
-  height: 32px;
+  height: 2rem;
 
   user-select: none;
   cursor: pointer;
@@ -72,7 +72,7 @@ export const InfoDisplay = styled.div`
   padding: 0 8px;
   border-bottom: 6px solid white;
 
-  height: 50px;
+  height: 3.125rem;
   overflow-y: scroll;
 
   p {
