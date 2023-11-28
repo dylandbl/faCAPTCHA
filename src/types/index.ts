@@ -14,6 +14,8 @@ export interface SharedProps {
   // compared to captchaTopics and case and spelling must match exactly. The images will be
   // displayed in order.
   helpText?: string; // An alternative to the default help text, shown when the '?' icon is clicked.
+  helpButtonAriaLabel?: string; // Alternative aria-label and title for the '?' icon button.
+  refreshButtonAriaLabel?: string; // Alternative aria-label and title for the refresh icon button.
   minAttempts?: number; // The minimum number of required attempts, regardless of whether
   // the attempts are correct or not.
   maxAttempts?: number; // The maximum number of attempts that can be made before being

@@ -35,6 +35,8 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
     imgTopicUrls,
     helpText,
     uncloseable = false,
+    refreshButtonAriaLabel,
+    helpButtonAriaLabel,
   } = props;
   // If maxAttempts is undefined, maxAttempts can be min + 7.
   // If maxAttempts is defined but less than minAttempts, throw error and disable the CAPTCHA.
@@ -229,6 +231,8 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
           <CaptchaFooter
             onRefresh={handleRefresh}
             onInfo={handleInfo}
+            refreshButtonAriaLabel={refreshButtonAriaLabel}
+            helpButtonAriaLabel={helpButtonAriaLabel}
           >
             <VerifyButton
               onClick={(e) => handleVerify(e)}
