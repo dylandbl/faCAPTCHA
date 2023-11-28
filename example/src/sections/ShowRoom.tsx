@@ -153,11 +153,17 @@ export const ShowRoom = () => {
           >
             {showConfig && (
               <>
-                <ShowCodeButton onClick={handleResetFields}>
+                <ShowCodeButton
+                  onClick={handleResetFields}
+                  type='button'
+                >
                   (Reset)
                 </ShowCodeButton>{' '}
                 {!smallScreen && (
-                  <ShowCodeButton onClick={handleToggleCodeView}>
+                  <ShowCodeButton
+                    onClick={handleToggleCodeView}
+                    type='button'
+                  >
                     [{showCode ? 'Hide' : 'View'} code]
                   </ShowCodeButton>
                 )}
