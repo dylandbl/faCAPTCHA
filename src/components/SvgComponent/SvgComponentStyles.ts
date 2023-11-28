@@ -44,4 +44,5 @@ export const CheckmarkBackground = styled.div`
   background: white;
   border-radius: 50%;
   position: absolute;
+  margin: 2px;
 `;
