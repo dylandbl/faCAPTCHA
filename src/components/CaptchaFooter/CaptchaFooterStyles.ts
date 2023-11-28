@@ -8,8 +8,7 @@ export const FooterContainer = styled.div`
   text-align: left;
   bottom: 16px;
   margin-top: 16px;
-  // -16px to account for padding on each side.
-  width: calc(100% - 16px);
+  width: 100%;
 `;
 
 export const FooterButtonsContainer = styled.div`
