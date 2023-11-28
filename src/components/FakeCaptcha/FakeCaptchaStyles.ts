@@ -12,7 +12,6 @@ export const CaptchaContainerOuter = styled.div`
 export const CaptchaContainer = styled.div<{ displayInfo: boolean }>`
   padding: 8px 8px 16px;
   width: 316px;
-  height: 500px;
   position: relative;
   border-radius: 2px;
 `;
