@@ -24,7 +24,7 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
     cellsWide = 4,
     cellsTall = cellsWide,
     onRefresh,
-    simulateSlow = 1,
+    simulateSlow = 0,
     setCaptchaPassed,
     setShowCaptcha,
     minAttempts = 1,

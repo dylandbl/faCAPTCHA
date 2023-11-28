@@ -96,7 +96,7 @@ export const ShowRoom = () => {
               ? ''
               : `\n  captchaTopics={["${captchaTopicsValue}"]}`}
             {cellsWideValue === 4 ? '' : `\n  cellsWide={${cellsWideValue}}`}
-            {simulateSlowValue === 1
+            {simulateSlowValue === 0
               ? ''
               : `\n  simulateSlow={${simulateSlowValue}}`}
             {minAttemptsValue === 1
