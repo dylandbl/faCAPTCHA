@@ -8,7 +8,9 @@
   
 [**fey**-**kap**-ch*uh*]
 
-A functional, configurable, and *accessible* frontend CAPTCHA for React. The name is a portmanteau of 'fake' and 'CAPTCHA', and was initially an exploration in bad UX, but through development, it became a real and functional CAPTCHA. Just be sure to change the [`helpText`](#helptext-default-value). faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
+A functional, configurable, and *accessible* frontend CAPTCHA for React. The name is a portmanteau of 'fake' and 'CAPTCHA', and was initially an exploration in bad UX, but through development, it became a real and functional CAPTCHA with accessibility features not found in other popular CAPTCHAs. Just be sure to change the [`helpText`](#helptext-default-value).
+
+faCAPTCHA was inspired by scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
 
 ## Installation
 ```sh
