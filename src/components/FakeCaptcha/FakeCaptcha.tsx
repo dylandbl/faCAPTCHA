@@ -208,7 +208,7 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
               {connectionSpeed > 0 && (
                 <>
                   <RefreshSvg
-                    size={42}
+                    size={2.625}
                     spin
                   />
                   <PoweredBy>Powered by faCAPTCHA</PoweredBy>
