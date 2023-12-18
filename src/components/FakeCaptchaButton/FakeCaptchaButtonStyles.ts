@@ -1,9 +1,8 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-export const CaptchaButton = styled.div`
-  min-width: 275px;
-  max-width: 275px;
-  height: 52px;
+export const CaptchaContainer = styled.div`
+  min-width: 17.188rem;
+  max-width: 17.188rem;
   border-radius: 2px;
   border: 1px solid lightgrey;
   padding: 10px;
@@ -20,18 +19,19 @@ export const CheckboxDiv = styled.div`
   align-items: center;
   font-weight: 500;
   font-size: 0.95rem;
+  gap: 0.625rem;
 `;
 
 export const CheckboxInput = styled.input`
-  height: 24px;
-  width: 24px;
-  margin-right: 10px;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0px;
 
-  ${({ disabled }) => disabled && "cursor: not-allowed;"}
+  ${({ disabled }) => disabled && 'cursor: not-allowed;'}
 `;
 
-export const Label = styled.div`
+export const PoweredBy = styled.div`
   font-size: 0.7rem;
   color: grey;
-  width: 60px;
+  width: 3.75rem;
 `;

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CaptchaContainerOuter = styled.div`
   display: inline-block;
@@ -8,10 +8,10 @@ export const CaptchaContainerOuter = styled.div`
   background: white;
   z-index: 2000000000; // This is what Google does, so it's okay.
 `;
+
 export const CaptchaContainer = styled.div<{ displayInfo: boolean }>`
   padding: 8px 8px 16px;
   width: 316px;
-  height: 500px;
   position: relative;
   border-radius: 2px;
 `;
@@ -40,10 +40,9 @@ export const VerifyButton = styled.button`
   border-radius: 2px;
   background-color: #932093;
   border: none;
-  outline: none;
   color: white;
   font-weight: bold;
-  height: 32px;
+  height: 2rem;
 
   user-select: none;
   cursor: pointer;
@@ -72,7 +71,7 @@ export const InfoDisplay = styled.div`
   padding: 0 8px;
   border-bottom: 6px solid white;
 
-  height: 50px;
+  height: 3.125rem;
   overflow-y: scroll;
 
   p {

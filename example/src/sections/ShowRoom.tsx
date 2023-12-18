@@ -96,7 +96,7 @@ export const ShowRoom = () => {
               ? ''
               : `\n  captchaTopics={["${captchaTopicsValue}"]}`}
             {cellsWideValue === 4 ? '' : `\n  cellsWide={${cellsWideValue}}`}
-            {simulateSlowValue === 1
+            {simulateSlowValue === 0
               ? ''
               : `\n  simulateSlow={${simulateSlowValue}}`}
             {minAttemptsValue === 1
@@ -153,11 +153,17 @@ export const ShowRoom = () => {
           >
             {showConfig && (
               <>
-                <ShowCodeButton onClick={handleResetFields}>
+                <ShowCodeButton
+                  onClick={handleResetFields}
+                  type='button'
+                >
                   (Reset)
                 </ShowCodeButton>{' '}
                 {!smallScreen && (
-                  <ShowCodeButton onClick={handleToggleCodeView}>
+                  <ShowCodeButton
+                    onClick={handleToggleCodeView}
+                    type='button'
+                  >
                     [{showCode ? 'Hide' : 'View'} code]
                   </ShowCodeButton>
                 )}

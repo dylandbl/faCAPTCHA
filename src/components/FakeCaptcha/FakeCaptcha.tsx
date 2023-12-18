@@ -1,4 +1,5 @@
-import { ImageButton } from "../ImageButtons/ImageButtons";
+import { MouseEvent, useEffect, useState, useCallback } from 'react';
+import { ImageButton } from '../ImageButtons/ImageButtons';
 import {
   CaptchaContainer,
   CaptchaContainerOuter,
@@ -6,26 +7,24 @@ import {
   GridArea,
   InfoDisplay,
   VerifyButton,
-} from "./FakeCaptchaStyles";
-import { MouseEvent, useEffect, useState } from "react";
-import { CaptchaHeader } from "../CaptchaHeader/CaptchaHeader";
-import { CaptchaFooter } from "../CaptchaFooter/CaptchaFooter";
-import { randomCaptchaTopic } from "../../utils/index";
-import { RefreshSvg } from "../SvgComponent/SvgComponent";
-import { Label } from "../FakeCaptchaButton/FakeCaptchaButtonStyles";
-import { useCallback } from "react";
-import { CaptchaWindowProps } from "../../types/index";
-import { OverlayDiv } from "../Overlay/OverlayStyles";
+} from './FakeCaptchaStyles';
+import { CaptchaHeader } from '../CaptchaHeader/CaptchaHeader';
+import { CaptchaFooter } from '../CaptchaFooter/CaptchaFooter';
+import { randomCaptchaTopic } from '../../utils/index';
+import { RefreshSvg } from '../SvgComponent/SvgComponent';
+import { PoweredBy } from '../FakeCaptchaButton/FakeCaptchaButtonStyles';
+import { CaptchaWindowProps } from '../../types/index';
+import { OverlayDiv } from '../Overlay/OverlayStyles';
 
 const FaCAPTCHA = (props: CaptchaWindowProps) => {
   const {
-    verifyText = "verify",
+    verifyText = 'verify',
     onClickVerify,
     headerText,
     cellsWide = 4,
     cellsTall = cellsWide,
     onRefresh,
-    simulateSlow = 1,
+    simulateSlow = 0,
     setCaptchaPassed,
     setShowCaptcha,
     minAttempts = 1,
@@ -36,6 +35,8 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
     imgTopicUrls,
     helpText,
     uncloseable = false,
+    refreshButtonAriaLabel,
+    helpButtonAriaLabel,
   } = props;
   // If maxAttempts is undefined, maxAttempts can be min + 7.
   // If maxAttempts is defined but less than minAttempts, throw error and disable the CAPTCHA.
@@ -50,7 +51,7 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
   }
   const initialTopic = captchaTopics
     ? captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
-    : randomCaptchaTopic() ?? "string";
+    : randomCaptchaTopic() ?? 'string';
   const [captchaTopic, setCaptchaTopic] = useState(initialTopic);
   const [isLoading, setIsLoading] = useState(true);
   const [currentAttempt, setAttemptsCount] = useState(1);
@@ -59,7 +60,7 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
     simulateSlow *
     Math.floor(
       Math.random() * (simulateSlow * 3000 - simulateSlow * 2000) +
-        simulateSlow * 2000
+        simulateSlow * 2000,
     );
   const correctSelectionKeys: string[] = [];
   const selectedItems: string[] = [];
@@ -68,12 +69,13 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
   useEffect(() => {
     setTimeout(
       () => setIsLoading(false),
-      // Does not use connectionSpeed to prevent updating isLoading on connectionSpeed changes, which happens every render.
+      // Does not use connectionSpeed to prevent updating isLoading on
+      // connectionSpeed changes, which happens every render.
       simulateSlow *
         Math.floor(
           Math.random() * (simulateSlow * 3000 - simulateSlow * 2000) +
-            simulateSlow * 2000
-        )
+            simulateSlow * 2000,
+        ),
     );
   }, [simulateSlow, setIsLoading]);
 
@@ -97,7 +99,7 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
             url={imgTopicUrls[index]?.url}
             topics={imgTopicUrls[index]?.topics}
             handleSelection={handleImageSelection}
-          />
+          />,
         );
 
         // Later, on verification, we can compare selected image keys to keys in this array.
@@ -115,8 +117,8 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
 
   // Handles styling to ensure the grid items are all equal size.
   const gridTemplateColumns = () => {
-    let gridTemplateColumnsString = "";
-    for (let x = 0; x < cellsWide; x++) gridTemplateColumnsString += "1fr ";
+    let gridTemplateColumnsString = '';
+    for (let x = 0; x < cellsWide; x++) gridTemplateColumnsString += '1fr ';
 
     return gridTemplateColumnsString;
   };
@@ -131,7 +133,7 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
     // Then set the new topic.
     captchaTopics
       ? setCaptchaTopic(
-          captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))]
+          captchaTopics[Math.floor(Math.random() * (captchaTopics.length - 1))],
         )
       : setCaptchaTopic(randomCaptchaTopic());
   }, [setIsLoading, connectionSpeed, onRefresh, captchaTopics]);
@@ -205,8 +207,11 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
             <CentringDiv>
               {connectionSpeed > 0 && (
                 <>
-                  <RefreshSvg size={42} spin />
-                  <Label>Powered by faCAPTCHA</Label>
+                  <RefreshSvg
+                    size={2.625}
+                    spin
+                  />
+                  <PoweredBy>Powered by faCAPTCHA</PoweredBy>
                 </>
               )}
             </CentringDiv>
@@ -223,8 +228,16 @@ const FaCAPTCHA = (props: CaptchaWindowProps) => {
               </GridArea>
             </>
           )}
-          <CaptchaFooter onRefresh={handleRefresh} onInfo={handleInfo}>
-            <VerifyButton onClick={(e) => handleVerify(e)}>
+          <CaptchaFooter
+            onRefresh={handleRefresh}
+            onInfo={handleInfo}
+            refreshButtonAriaLabel={refreshButtonAriaLabel}
+            helpButtonAriaLabel={helpButtonAriaLabel}
+          >
+            <VerifyButton
+              onClick={(e) => handleVerify(e)}
+              type='button'
+            >
               {verifyText.toUpperCase()}
             </VerifyButton>
           </CaptchaFooter>

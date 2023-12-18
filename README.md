@@ -8,7 +8,7 @@
   
 [**fey**-**kap**-ch*uh*]
 
-A functional, configurable, frontend CAPTCHA for React. The name is a portmanteau of 'fake' and 'CAPTCHA', and was initially an exploration in bad UX, but through development, it became a real and functional CAPTCHA. Just be sure to change the [`helpText`](#helptext-default-value). faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
+A functional, configurable, and *accessible* frontend CAPTCHA for React. The name is a portmanteau of 'fake' and 'CAPTCHA', and was initially an exploration in bad UX, but through development, it became a real and functional CAPTCHA. Just be sure to change the [`helpText`](#helptext-default-value). faCAPTCHA was inspired by YouTuber, streamer, and scambaiter [Kitboga](https://www.youtube.com/c/KitbogaShow), who uses fake websites or programs to frustrate and waste the time of scammers.
 
 ## Installation
 ```sh
@@ -35,6 +35,7 @@ npm install facaptcha
 | ⚠️  | [`imgTopicUrls`](#imgtopicurls)   | [`ImgTopicType[]`](#imgtopictype) | -                | Array of image URLs with associated topic tags. |
 |     | `headerText`                      | `string`                          | [See here](#headertext-default-value) | Used in place of the CAPTCHA header text. Overrides `captchaTopic`. |
 |     | `helpText`                        | `string`                          | [See here](#helptext-default-value) | Used in place of the default help text, shown when the '?' icon is clicked. |
+|     | `helpButtonAriaLabel`             | `string`                          | `"Help"`         | Used as both the `title` and `aria-label` for the '?' icon button. |
 |     | `maxAttempts`                     | `number`                          | `minAttempts + 7` | Maximum number of attempts. If exceeded, `disabled` is set to `true` and `onMaxAttempts` is called. |
 |     | `minAttempts`                     | `number`                          | `1`              | Minimum number of required attempts, regardless of whether the attempts are correct or not. |
 |     | `notARobotText`                   | `string`                          | `"I'm not a robot"` | Used in place of the "I'm not a robot" text. |
@@ -42,6 +43,7 @@ npm install facaptcha
 |     | `onClickVerify`                   | `() => void`                      | -                | Called on clicking the 'Verify' button. |
 |     | `onMaxAttempts`                   | `() => void`                      | -                | Called when `maxAttempts` is exceeded. |
 |     | `onRefresh`                       | `() => void`                      | -                | Called on clicking the refresh icon. |
+|     | `refreshButtonAriaLabel`          | `string`                          | `"Try a new challenge"` | Used as both the `title` and `aria-label` for the refresh icon button. |
 | ⚠️  | `onVerificationComplete`          | `() => void`                      | -                | Called on successful verification completion. |
 |     | [`simulateSlow`](#simulateslow)   | `0 - 3`                           | `1`              | Simulates a slow internet connection speed. |
 |     | `uncloseable`                     | `boolean`                         | `false`          | Prevents the CAPTCHA from being closed until verification is complete. |

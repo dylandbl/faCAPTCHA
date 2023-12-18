@@ -1,10 +1,10 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 export const Pre = styled.pre<{ show: boolean }>`
   background: #e7e7e7;
   border-radius: 4px;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
   margin: -20px 0 10px 0;
   position: relative;
@@ -13,7 +13,7 @@ export const Pre = styled.pre<{ show: boolean }>`
     show
       ? css`
           width: 100%;
-          padding: 4px 56px 8px;
+          padding: 4px 56px 8px 32px;
           overflow-x: hidden;
         `
       : css`

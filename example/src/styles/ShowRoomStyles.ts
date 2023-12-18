@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 export const ShowRoomContainer = styled.div`
   .codeBlockContainer {
@@ -9,10 +9,12 @@ export const ShowRoomContainer = styled.div`
   }
 `;
 
-export const ShowCodeButton = styled.div`
+export const ShowCodeButton = styled.button`
   cursor: pointer;
   color: #0645ad;
   font-size: 0.9rem;
+  background: transparent;
+  border: none;
 
   :hover {
     text-decoration: underline;
@@ -26,12 +28,12 @@ export const ShowCodeButton = styled.div`
 export const FlexContainer = styled.div<{ smallScreen?: boolean }>`
   display: flex;
   justify-content: space-evenly;
-  align-items: ${({ smallScreen }) => (smallScreen ? "center" : "flex-start")};
-  ${({ smallScreen }) => smallScreen && "flex-direction: column-reverse;"}
+  align-items: ${({ smallScreen }) => (smallScreen ? 'center' : 'flex-start')};
+  ${({ smallScreen }) => smallScreen && 'flex-direction: column-reverse;'}
   width: 100%;
   max-width: 1000px;
   min-height: 280px;
-  margin: ${({ smallScreen }) => (smallScreen ? "48px" : "16px")} auto 0px;
+  margin: ${({ smallScreen }) => (smallScreen ? '48px' : '16px')} auto 0px;
 `;
 
 export const InputsContainer = styled.div<{ show: boolean }>`
