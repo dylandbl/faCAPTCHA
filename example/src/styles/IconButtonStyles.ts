@@ -13,5 +13,7 @@ export const IconButton = styled.button<{ show: boolean }>`
   right: 4px;
 
   opacity: ${({ show }) => (show ? 1 : 0)};
-  transition: opacity ${({ show }) => (show ? 1 : 0.15)}s;
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
+  transition: opacity ${({ show }) => (show ? 1 : 0.15)}s,
+    visibility ${({ show }) => (show ? 0.5 : 0.5)}s;
 `;
