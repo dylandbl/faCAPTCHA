@@ -33,7 +33,7 @@ npm install facaptcha
 |     | [`captchaTopics`](#captchatopics) | `string[]`                        | [See here](https://github.com/dylandbl/faCAPTCHA/blob/main/src/lib/utils/stringsToFind.ts) | Topics displayed at the top of the CAPTCHA. Does not work with `headerText`. |
 |     | `cellsWide`                       | `number`                          | `4`              | Number of cells in each row. |
 |     | `cellsTall`                       | `number`                          | `cellsWide`      | Number of cells in each column. |
-|     | `disabled`                        | 'boolean'                         | `false`          | Disables the CAPTCHA, preventing users from attempting verification. `disabled` is `true` if the user exceeds `maxAttempts`. |
+|     | `disabled`                        | `boolean`                         | `false`          | Disables the CAPTCHA, preventing users from attempting verification. `disabled` is `true` if the user exceeds `maxAttempts`. |
 | ⚠️  | [`imgTopicUrls`](#imgtopicurls)   | [`ImgTopicType[]`](#imgtopictype) | -                | Array of image URLs with associated topic tags. |
 |     | `headerText`                      | `string`                          | [See here](#headertext-default-value) | Used in place of the CAPTCHA header text. Overrides `captchaTopic`. |
 |     | `helpText`                        | `string`                          | [See here](#helptext-default-value) | Used in place of the default help text, shown when the '?' icon is clicked. |
