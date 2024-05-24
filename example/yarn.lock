@@ -1354,15 +1354,15 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.8.1.tgz#c1ddb040429c6d21d38cc945fe75c818cfb68e17"
   integrity sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==
 
-"@emotion/react@^11.10.0":
-  version "11.11.1"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.11.1.tgz#b2c36afac95b184f73b08da8c214fdf861fa4157"
-  integrity sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA==
+"@emotion/react@^11.11.4":
+  version "11.11.4"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.11.4.tgz#3a829cac25c1f00e126408fab7f891f00ecc3c1d"
+  integrity sha512-t8AjMlF0gHpvvxk5mAtCqR4vmxiGHCeJBaQO6gncUSdklELOgtwjerNY2yuJNfwnc6vi16U/+uMF+afIawJ9iw==
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@emotion/babel-plugin" "^11.11.0"
     "@emotion/cache" "^11.11.0"
-    "@emotion/serialize" "^1.1.2"
+    "@emotion/serialize" "^1.1.3"
     "@emotion/use-insertion-effect-with-fallbacks" "^1.0.1"
     "@emotion/utils" "^1.2.1"
     "@emotion/weak-memoize" "^0.3.1"
@@ -1396,6 +1396,17 @@
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.1.2.tgz#017a6e4c9b8a803bd576ff3d52a0ea6fa5a62b51"
   integrity sha512-zR6a/fkFP4EAcCMQtLOhIgpprZOwNmCldtpaISpvz348+DP4Mz8ZoKaGGCQpbzepNIUWbq4w6hNZkwDyKoS+HA==
+  dependencies:
+    "@emotion/hash" "^0.9.1"
+    "@emotion/memoize" "^0.8.1"
+    "@emotion/unitless" "^0.8.1"
+    "@emotion/utils" "^1.2.1"
+    csstype "^3.0.2"
+
+"@emotion/serialize@^1.1.3":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.1.4.tgz#fc8f6d80c492cfa08801d544a05331d1cc7cd451"
+  integrity sha512-RIN04MBT8g+FnDwgvIUi8czvr1LU1alUMI05LekWB5DGyTm8cCBMCRpq3GqaiyEDRptEXOyXnvZ58GZYu4kBxQ==
   dependencies:
     "@emotion/hash" "^0.9.1"
     "@emotion/memoize" "^0.8.1"
@@ -4134,9 +4145,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 ejs@^3.1.6:
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.8.tgz#758d32910c78047585c7ef1f92f9ee041c1c190b"
-  integrity sha512-/sXZeMlhS0ArkfX2Aw780gJzXSMPnKjtspYZv+f3NiKLlubezAHDU5+9xz6gd3/NhG3txQCo6xlglmTS+oTGEQ==
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.10.tgz#69ab8358b14e896f80cc39e62087b88500c3ac3b"
+  integrity sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==
   dependencies:
     jake "^10.8.5"
 
@@ -4638,7 +4649,7 @@ express@^4.17.3:
 "facaptcha@link:..":
   version "1.2.0"
   dependencies:
-    "@emotion/react" "^11.10.0"
+    "@emotion/react" "^11.11.4"
     "@emotion/styled" "^11.10.0"
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
